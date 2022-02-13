@@ -1,0 +1,10 @@
+<input #todoInput>
+<button (click)="add(todoInput.value)">Hinzufügen</button>
+<button (click)="sync()">Sync</button>
+
+<ul>
+    <li *ngFor="let todo of todos" [class.done]="todo.done">
+        <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
+        {{ todo.title }}
+    </li>
+</ul>
