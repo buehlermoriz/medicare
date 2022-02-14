@@ -1,10 +1,21 @@
-<input #todoInput>
-<button (click)="add(todoInput.value)">Hinzufügen</button>
+<!-- Inputelemente schöner gestalten!-->
+<br>
+<input #medicine placeholder="Medikament">
+<br>
+<input #description placeholder="Beschreibung">
+<br>
+<input #consumption_date placeholder="Mo,Mi,Fr,So,...">
+<br>
+<input #consumption_day placeholder="zwei Wochen">
+<br>
+<input #consumption_times placeholder="1x, 2x, 3x">
+<br>
+<button (click)="add(medicine.value, description.value, consumption_date.value, consumption_day.value, consumption_times.value)">Hinzufügen</button>
 <button (click)="sync()">Sync</button>
 
 <ul>
     <li *ngFor="let todo of todos" [class.done]="todo.done">
         <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
-        {{ todo.title }}
+        {{ todo.medicine }}
     </li>
 </ul>
