@@ -22,7 +22,7 @@ export class TodoService extends Dexie {
     return this.todos.toArray();
   }
 
-  add(medicine: string, description: string, consumption_date: string, consumption_day: string, consumption_times: string) {
+  add(medicine: string, description: string, consumption_date: string, consumption_day: Date | null, consumption_times: number) {
     return this.todos.add({ medicine: medicine, id: v4(), done: false, description: description, consumption_date: consumption_date, consumption_day: consumption_day, consumption_times: consumption_times  });
   }
 
