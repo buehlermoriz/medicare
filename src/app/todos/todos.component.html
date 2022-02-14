@@ -16,6 +16,10 @@
 <ul>
     <li *ngFor="let todo of todos" [class.done]="todo.done">
         <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
-        {{ todo.medicine }}
+        <strong>{{ todo.medicine }}</strong>
+        {{ todo.description }}
+        {{ todo.consumption_date }}
+        {{ todo.consumption_day }}
+        {{ todo.consumption_times }}
     </li>
 </ul>
