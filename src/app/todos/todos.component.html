@@ -21,15 +21,6 @@
       </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-    An folgenden Wochentagen einnehmen: 
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-form-field class="input-full-width" appearance="fill">
-        <mat-label>Wochentage</mat-label>
-        <input #consumption_date matInput placeholder="Mo,Mi,Fr,So,..." >
-      </mat-form-field>
-</mat-grid-tile>
-<mat-grid-tile>
     An folgenden Wochentagen einnehmen:
 </mat-grid-tile>
 <mat-grid-tile>
@@ -79,14 +70,54 @@
 </mat-grid-tile>
 
 </mat-grid-list>
-<!-- 
+
 <ul>
     <li *ngFor="let todo of todos" [class.done]="todo.done">
         <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
-        <strong>{{ todo.medicine }}</strong><br>
-        <em>{{ todo.description }} <br>
-        {{ todo.consumption_date }} <br>
-        {{ todo.consumption_day }} <br>
-        {{ todo.consumption_times }}</em>
+        <table>
+            <tr>
+                <td>
+                    Name Medikament: 
+                </td>
+                <td>
+                    <strong>{{ todo.medicine }}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Beschreibung des Medikaments: 
+                </td>
+                <td>
+                    {{ todo.description }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Einnehmen bis:
+                </td>
+                <td>
+                    {{ todo.consumption_day }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Einnehmen an den Tagen:
+                </td>
+                <td>
+                        !Funktion fehlt noch!
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Zur Uhrzeit ... einnahmen:
+                </td>
+                <td>
+                    !Funktion fehlt noch!
+                </td>
+            </tr>
+        </table>
+        
+        
+       
     </li>
-</ul>-->
+</ul>
