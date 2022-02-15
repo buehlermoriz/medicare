@@ -69,4 +69,7 @@ consumption_midday: consumption_midday,
     const syncedTodos = await this.httpClient.post<Todo[]>('http://localhost:3030/sync', allTodos).toPromise();
     this.todos.bulkPut(syncedTodos!);
   }
+  deleteToDo(todo :Todo) {
+    return this.todos.delete(todo.id);
+  }
 }
