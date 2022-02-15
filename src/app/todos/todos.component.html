@@ -1,34 +1,74 @@
+
+<mat-grid-list cols="2" rowHeight="50px" >
+
 <!-- Inputelemente schöner gestalten!-->
-<br>
-Name Medikament:                     <input required #medicine placeholder="z.B. Ibuprufen">
-<br>
-Beschreibung des Medikaments:        <input required #description placeholder="z.B. blaue Dose">
-<br>
-<!-- INUPT WOCHENTAGE NOCH FEHLERHAFT SIEHE AUSGEKLAMMERTER INHALT TODOS.COMPONENT.TS-->
-An folgenden Wochentagen einnehmen:  <input required #consumption_date placeholder="Mo,Mi,Fr,So,...">
-<br>
-An folgenden Wochentagen einnehmen:  <input type="checkbox" name="monday">
-                                        <label for="monday">Montag</label>
-                                        <input type="checkbox" name="tuesday">
-                                        <label for="tuesday">Dienstag</label>
-                                        <input type="checkbox" name="wednesday">
-                                        <label for="wednesday">Mittwoch</label>
-                                        <input type="checkbox" name="thirsday">
-                                        <label for="thirsday">Donnerstag</label>
-                                        <input type="checkbox" name="friday">
-                                        <label for="friday">Freitag</label>
-                                        <input type="checkbox" name="satturday">
-                                        <label for="satturday">Samstag</label>
-                                        <input type="checkbox" name="sunday">
-                                        <label for="sunday">Sonntag</label>
-                                  
-<br>
-Medikament einnehmen bis:            <input required type="date" #consumption_day>
-<br>
-Häufigkeit der Einnahme:            <input required type="number" value="1" min="1" max="8" #consumption_times placeholder="z.B. 1, 2, 3">
-<br>
-<button (click)="add(medicine.value, description.value, consumption_date.value, consumption_day.valueAsDate, consumption_times.valueAsNumber)">Hinzufügen</button>
-<button (click)="sync()">Sync</button>
+<mat-grid-tile>
+    Name Medikament: 
+</mat-grid-tile>
+<mat-grid-tile> 
+    <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Medikament</mat-label>
+        <input #medicine matInput placeholder="z.B. Ibuprufen" >
+      </mat-form-field>
+</mat-grid-tile>     
+<mat-grid-tile>
+    Beschreibung des Medikaments: 
+</mat-grid-tile>
+<mat-grid-tile>
+    <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Beschreibung</mat-label>
+        <input #description matInput placeholder="z.B. blaue Dose" >
+      </mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile>
+    An folgenden Wochentagen einnehmen: 
+</mat-grid-tile>
+<mat-grid-tile>
+    <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Wochentage</mat-label>
+        <input #consumption_date matInput placeholder="Mo,Mi,Fr,So,..." >
+      </mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile>
+    An folgenden Wochentagen einnehmen:
+</mat-grid-tile>
+<mat-grid-tile>
+    <mat-checkbox name="monday" class="example-margin">Montag</mat-checkbox>
+    <mat-checkbox name="tuesday" class="example-margin">Dienstag</mat-checkbox>
+    <mat-checkbox name="wednesday" class="example-margin">Mittwoch</mat-checkbox>
+    <mat-checkbox name="thirsday" class="example-margin">Donnerstag</mat-checkbox>
+    <mat-checkbox name="friday" class="example-margin">Freitag</mat-checkbox>
+    <mat-checkbox name="satturday" class="example-margin">Samstag</mat-checkbox>
+    <mat-checkbox name="sunday" class="example-margin">Sonntag</mat-checkbox>
+</mat-grid-tile>
+<mat-grid-tile>
+    Medikament einnehmen bis: 
+</mat-grid-tile>
+<mat-grid-tile>
+    
+    <input required type="date" #consumption_day>
+</mat-grid-tile>
+<mat-grid-tile>
+    Häufigkeit der Einnahme:  
+</mat-grid-tile>
+<mat-grid-tile>
+  <!--  <mat-select [(value)]="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="1">1 mal pro Tag</mat-option>
+        <mat-option value="2">2 mal pro Tag</mat-option>
+        <mat-option value="3">3 mal pro Tag</mat-option>
+        <mat-option value="4">4 mal pro Tag</mat-option>
+        <mat-option value="5">5 mal pro Tag</mat-option>
+      </mat-select> -->
+    <input required type="number" value="1" min="1" max="8" #consumption_times placeholder="z.B. 1, 2, 3">
+</mat-grid-tile>
+<mat-grid-tile>
+    <button mat-raised-button (click)="add(medicine.value, description.value, checkedBoexes(), consumption_day.valueAsDate, consumption_times.valueAsNumber)">Hinzufügen</button>
+<button mat-raised-button (click)="sync()">Sync</button>
+</mat-grid-tile>
+
+</mat-grid-list>
+<button (click)="checkedBoexes()">Check Boxes</button>
 
 <ul>
     <li *ngFor="let todo of todos" [class.done]="todo.done">

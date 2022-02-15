@@ -4,6 +4,7 @@ import { Dexie } from 'dexie';
 import { v4 } from 'uuid';
 import { Todo } from './todo';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class TodoService extends Dexie {
     return this.todos.toArray();
   }
 
-  add(medicine: string, description: string, consumption_date: string, consumption_day: Date | null, consumption_times: number) {
+  add(medicine: string, description: string, consumption_date: any, consumption_day: Date | null, consumption_times: number) {
     return this.todos.add({ medicine: medicine, id: v4(), done: false, description: description, consumption_date: consumption_date, consumption_day: consumption_day, consumption_times: consumption_times  });
   }
 

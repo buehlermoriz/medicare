@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 
+
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
@@ -9,6 +10,7 @@ import { TodoService } from '../todo.service';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+  selected = "1"
 
   constructor(private todoService: TodoService) { }
 
@@ -16,7 +18,7 @@ export class TodosComponent implements OnInit {
     this.loadTodos();
   }
 
-  async add(medicine: string, description: string, consumption_date: string, consumption_day: Date | null, consumption_times: number) {
+  async add(medicine: string, description: string, consumption_date: any, consumption_day: Date | null, consumption_times: number) {
     await this.todoService.add(medicine, description, consumption_date, consumption_day, consumption_times);
     await this.loadTodos();
   }
@@ -36,14 +38,14 @@ export class TodosComponent implements OnInit {
   }
 
   async checkedBoexes(){
-    var array = []
-    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    var array:string[] = []
 
-   /* for (var i = 0; i < checkboxes.length; i++) {
-      const value = checkboxes[i].
-      array.push(<HTMLInputElement>checkboxes[i].value)
+    let element = <any> document.getElementsByName("Monday");  
+    if (element.checked) { 
+    array.push("Monday");
     }
-*/
+   return array
+
   }
  
   

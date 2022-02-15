@@ -8,7 +8,7 @@ export interface Todo {
     consumption_day: Date | null;
 
     //Bis wann wird das Medikament eingenommen z.B. zwei Wochen
-    consumption_date: string;
+    consumption_date: any;
 
     //Wie oft wird das Präperat pro Tag eingenommen
     consumption_times : number;
