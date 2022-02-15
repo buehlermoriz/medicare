@@ -18,8 +18,20 @@ export class TodosComponent implements OnInit {
     this.loadTodos();
   }
 
-  async add(medicine: string, description: string, consumption_date: any, consumption_day: Date | null, consumption_times: number) {
-    await this.todoService.add(medicine, description, consumption_date, consumption_day, consumption_times);
+  async add( medicine: string,
+    description: string, 
+     consumption_day: Date | null,
+     consumption_monday: boolean,
+   consumption_tuesday: boolean,
+   consumption_wednesday: boolean,
+   consumption_thirsday: boolean,
+   consumption_friday: boolean,
+   consumption_satturday: boolean,
+   consumption_sunday: boolean,
+   consumption_morning : boolean,
+   consumption_midday : boolean,
+   consumption_evening : boolean) {
+    await this.todoService.add(medicine, description, consumption_day, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
   }
 
@@ -35,17 +47,6 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-  }
-
-  async checkedBoexes(){
-    var array:string[] = []
-
-    let element = <any> document.getElementsByName("Monday");  
-    if (element.checked) { 
-    array.push("Monday");
-    }
-   return array
-
   }
  
   
