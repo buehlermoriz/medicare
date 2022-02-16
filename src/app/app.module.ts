@@ -20,13 +20,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     AboutComponent,
-    NavComponent
+    NavComponent,
+    CalendarComponent
   ],
   imports: [
     HttpClientModule,
