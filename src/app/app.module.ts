@@ -21,6 +21,19 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { CalendarComponent } from './calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  timeGridPlugin,
+  listPlugin,
+  interactionPlugin
+])
+
 
 @NgModule({
   declarations: [
@@ -28,10 +41,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     TodosComponent,
     AboutComponent,
     NavComponent,
-    CalendarComponent
+    CalendarComponent,
+    
   ],
   imports: [
     HttpClientModule,
+    FullCalendarModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -55,5 +70,8 @@ import { CalendarComponent } from './calendar/calendar.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
+
+  
 })
+
 export class AppModule { }

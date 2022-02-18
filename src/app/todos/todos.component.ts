@@ -39,6 +39,7 @@ export class TodosComponent implements OnInit {
     await this.todoService.sync();
     await this.loadTodos();
   }
+  
    async delete(todo: Todo)  {
     await this.todoService.deleteToDo(todo);
      
@@ -52,6 +53,7 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
+    this.loadTodos();
   }
  
   
