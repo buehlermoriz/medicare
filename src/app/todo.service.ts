@@ -70,6 +70,9 @@ consumption_midday: consumption_midday,
     this.todos.bulkPut(syncedTodos!);
   }
   deleteToDo(todo :Todo) {
-    return this.todos.delete(todo.id);
+    todo.done = !todo.done;
+    this.todos.put(todo);
+    return this.todos.delete(todo.id); 
+    
   }
 }

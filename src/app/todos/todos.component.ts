@@ -41,9 +41,16 @@ export class TodosComponent implements OnInit {
   }
   
    async delete(todo: Todo)  {
+     console.log("delete");
     await this.todoService.deleteToDo(todo);
      
   }
+
+  async test()  {
+    console.log("test");
+   
+    
+ }
   
 
   async toggleDone(todo: Todo) {
@@ -53,7 +60,7 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-    this.loadTodos();
+    
   }
  
   
