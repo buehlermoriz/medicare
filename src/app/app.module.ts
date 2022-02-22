@@ -26,6 +26,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
+import { UpdateComponent } from './update/update.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -42,6 +43,7 @@ FullCalendarModule.registerPlugins([
     AboutComponent,
     NavComponent,
     CalendarComponent,
+    UpdateComponent,
     
   ],
   imports: [
