@@ -11,6 +11,7 @@ import { Todo } from './todo';
 export class TodoService extends Dexie {
   todos!: Dexie.Table<Todo, string>;
 
+
   constructor(private httpClient: HttpClient) {
     super('TodoDB');
 
@@ -21,6 +22,11 @@ export class TodoService extends Dexie {
 
   getAll() {
     return this.todos.toArray();
+  }
+
+  getAllCalendar() {
+   
+    return this.todos;
   }
 
   add(

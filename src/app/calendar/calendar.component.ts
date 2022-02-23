@@ -11,7 +11,7 @@ import { createEventId } from './event-ulits';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  todos: Todo[] = [];
+   
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
@@ -32,26 +32,24 @@ export class CalendarComponent implements OnInit {
   };
 
 
-
-syncCalendar(selectInfo: DateSelectArg) {
+  syncCalendar(selectInfo: DateSelectArg)  {
+   
+  let todos =  this.todoService.getAllCalendar();
   const calendarApi = selectInfo.view.calendar;
-  let todos = this.todoService.getAll();
   calendarApi.unselect();
+  
   /*
 for(let todo in todos){
   calendarApi.addEvent({
     id: todo.id,
     title: todo.medicine,
     start: selectInfo.startStr,
-    end: todo.consumption_date,
+    end: selectInfo.endStr,
   });
 
 }*/
+}
+}
 
-    
-  
-}
-  
-}
 
 
