@@ -1,7 +1,7 @@
-
+<!--
 <mat-grid-list cols="2" rowHeight="50px" >
 
-<!-- Inputelemente schöner gestalten!-->
+
 <mat-grid-tile>
     Name Medikament: 
 </mat-grid-tile>
@@ -70,7 +70,7 @@
 </mat-grid-tile>
 
 </mat-grid-list>
-
+-->
 <ul>
     <li *ngFor="let todo of todos" [class.done]="todo.done">
         <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
@@ -115,9 +115,19 @@
                     !Funktion fehlt noch!
                 </td>
             </tr>
-            <button mat-raised-button (click)="delete(todo)">Delete To Do</button>
-            <button mat-raised-button (click)="test()">Update</button>
+           <!-- <button mat-raised-button (click)="delete(todo)">Delete To Do</button>
+            <button mat-raised-button (click)="test()">Update</button>-->
              </table>
               
            </li>
 </ul>
+
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+ <p>test</p>

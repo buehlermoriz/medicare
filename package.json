@@ -26,6 +26,7 @@
     "@fullcalendar/interaction": "^5.10.1",
     "@fullcalendar/list": "^5.10.1",
     "@fullcalendar/timegrid": "^5.10.1",
+    "bootstrap": "^5.1.3",
     "event-utils": "^2.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
