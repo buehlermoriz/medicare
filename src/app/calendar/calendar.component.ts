@@ -24,7 +24,7 @@ export class CalendarComponent implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    select: this.handleDateSelect.bind(this),
+    select: this.syncCalendar.bind(this),
     events: [
       { title: 'event 1', date: '2022-02-05' },
       { title: 'event 2', date: '2019-02-04' }
@@ -33,21 +33,23 @@ export class CalendarComponent implements OnInit {
 
 
 
-handleDateSelect(selectInfo: DateSelectArg) {
-  const title = prompt('Please enter a new title for your event');
+syncCalendar(selectInfo: DateSelectArg) {
   const calendarApi = selectInfo.view.calendar;
+  let todos = this.todoService.getAll();
+  calendarApi.unselect();
+  /*
+for(let todo in todos){
+  calendarApi.addEvent({
+    id: todo.id,
+    title: todo.medicine,
+    start: selectInfo.startStr,
+    end: todo.consumption_date,
+  });
 
-  calendarApi.unselect(); // clear date selection
+}*/
 
-  if (title) {
-    calendarApi.addEvent({
-      id: createEventId(),
-      title,
-      start: selectInfo.startStr,
-      end: selectInfo.endStr,
-      allDay: selectInfo.allDay
-    });
-  }
+    
+  
 }
   
 }
