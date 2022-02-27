@@ -18,7 +18,27 @@ export class TodosComponent implements OnInit {
     this.loadTodos();
   }
 
-  async add( medicine: string,
+  async splitTimeslot(medicine: string,
+    description: string, 
+     consumption_day: Date | null,
+     consumption_monday: boolean,
+   consumption_tuesday: boolean,
+   consumption_wednesday: boolean,
+   consumption_thirsday: boolean,
+   consumption_friday: boolean,
+   consumption_satturday: boolean,
+   consumption_sunday: boolean,
+   consumption_morning : boolean,
+   consumption_midday : boolean,
+   consumption_evening : boolean){
+    /*  var startDate = new Date().toISOString().slice(0, 10)
+     var endDate = consumption_day
+     alert(startDate + endDate);*/
+
+  }
+
+  async add( 
+    medicine: string,
     description: string, 
      consumption_day: Date | null,
      consumption_monday: boolean,
