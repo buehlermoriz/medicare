@@ -75,4 +75,12 @@ consumption_midday: consumption_midday,
     return this.todos.delete(todo.id); 
     
   }
+  
+  deleteToDoNewContent(todo :Todo,  textDescription: String) {
+    return this.todos.delete(todo.id); 
+    //add new content
+}
+addNewAfterContentChange(todo :Todo,  textDescription: String ) {
+  // return this.todos.add({todo.description});
+}
 }

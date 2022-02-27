@@ -4,29 +4,19 @@
         <button (click)="loadStart()"></button>
       
         <li *ngFor="let todo of todos">
-            <button (click)="load(todo)"></button>
+            <!-- <button (click)="load(todo)"></button> -->
           <table>
             <tr>
                 
                 <td>
                     <mat-form-field class="input-full-width" appearance="fill">
-                        <mat-label>Medikament</mat-label>
-                        <input #medicine matInput placeholder="{{ todo.id }}" >
+                        <mat-label>{{ todo.description }}</mat-label>
+                        <input #medicine matInput placeholder="new description"  id="newDescription">
                       </mat-form-field>
                 </td>
+                <button mat-raised-button (click)="postNewContent(todo)">Speichern</button>
             </tr>
-            <tr>
-                <td>
-                   
-                </td>
-                <td>
-                   
-                </td>
-            </tr>
-            <tr>
-                <td>
-                   
-                </td>
+            
               
          
   

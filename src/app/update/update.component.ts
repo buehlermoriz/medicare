@@ -15,11 +15,15 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
   }
    
-  async load (todo: Todo){
-    return todo.id;
-  }
+  // async load (todo: Todo){
+  //   return todo;
+  // }
   async loadStart(){
     this.todos = await this.todoService.getAll();
   }
-  
+  async postNewContent(todo: Todo){
+    var textDescription = (<HTMLInputElement>document.getElementById("newDescription")).value; 
+    console.log(textDescription);
+    await this.todoService.deleteToDoNewContent(todo, textDescription);
+  }
 }
