@@ -3,7 +3,7 @@ import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import * as moment from 'moment';
+
 
 
 
@@ -45,36 +45,36 @@ export class TodosComponent implements OnInit {
 
      var endDate = this.range.get("end")?.value;
     //  var endDateFormated = (moment(endDate)).format('DD-MMM-YYYY')
-
+    
 
      for(var day = startDate; day <= endDate; day.setDate(day.getDate() +1)){
       var consumption_start = day;
       var consumption_end = day;
-      if(consumption_monday===true && day.getDate()===0){
+      if(consumption_monday===true && day.getDay()===1){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Montag Success")
       }
-      if(consumption_tuesday===true && day.getDate()===1){
+      if(consumption_tuesday===true && day.getDay()===2){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Dienstag Success")
       }
-      if(consumption_wednesday===true && day.getDate()===2){
+      if(consumption_wednesday===true && day.getDay()===3){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Mittwoch Success")
       }
-      if(consumption_thirsday===true && day.getDate()===3){
+      if(consumption_thirsday===true && day.getDay()===4){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Donnerstag Success")
       }
-      if(consumption_friday===true && day.getDate()===4){
+      if(consumption_friday===true && day.getDay()===5){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Freitag Success")
       }
-      if(consumption_satturday===true && day.getDate()===5){
+      if(consumption_satturday===true && day.getDay()===6){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Samstag Success")
       }
-      if(consumption_sunday===true && day.getDate()===6){
+      if(consumption_sunday===true && day.getDay()===0){
         await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Sonntag Success")
       }
@@ -85,7 +85,10 @@ export class TodosComponent implements OnInit {
       console.log("Tag "+ day);
       }
       await this.loadTodos();
-  console.log("test")
+  console.log("test");
+  console.log(day.getDay());
+      
+
 
 
   }

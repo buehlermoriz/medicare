@@ -29,7 +29,7 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import * as moment from 'moment';
+
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
