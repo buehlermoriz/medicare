@@ -49,33 +49,34 @@ export class TodosComponent implements OnInit {
 
      for(var day = startDate; day <= endDate; day.setDate(day.getDate() +1)){
       var consumption_start = day;
-      var consumption_end = day;
+      console.log(day.getDay());
+      console.log(day.getDate() + " Schleifendurchlauf");
       if(consumption_monday===true && day.getDay()===1){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Montag Success")
       }
       if(consumption_tuesday===true && day.getDay()===2){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Dienstag Success")
       }
       if(consumption_wednesday===true && day.getDay()===3){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Mittwoch Success")
       }
       if(consumption_thirsday===true && day.getDay()===4){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Donnerstag Success")
       }
       if(consumption_friday===true && day.getDay()===5){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Freitag Success")
       }
       if(consumption_satturday===true && day.getDay()===6){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Samstag Success")
       }
       if(consumption_sunday===true && day.getDay()===0){
-        await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
         console.log("Sonntag Success")
       }
       // else{
@@ -87,6 +88,13 @@ export class TodosComponent implements OnInit {
       await this.loadTodos();
   console.log("test");
   console.log(day.getDay());
+  console.log(day.getDate() + " Schleifendurchlauf")
+  var helper = 0;
+  day.getDate() === helper;
+  startDate = undefined;
+  console.log(startDate);
+  
+
       
 
 
@@ -108,9 +116,9 @@ export class TodosComponent implements OnInit {
    consumption_midday : boolean,
    consumption_evening : boolean) {
      var consumption_start = this.range.get("start")?.value;
-     var consumption_end = this.range.get("end")?.value;
+    
 
-   var id =   await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+   var id =   await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
   }
 

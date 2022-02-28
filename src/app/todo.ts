@@ -6,7 +6,6 @@ export interface Todo {
     
     //An welchen Tagen soll die Medizin konsumiert werden? z.B. Mo,Mi,Fr,So
     consumption_start: Date | null;
-    consumption_end: Date | null;
     //Bis wann wird das Medikament eingenommen z.B. zwei Wochen
    consumption_monday: boolean;
      consumption_tuesday: boolean;
