@@ -29,6 +29,7 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImprintComponent } from './imprint/imprint.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -46,6 +47,7 @@ FullCalendarModule.registerPlugins([
     NavComponent,
     CalendarComponent,
     UpdateComponent,
+    ImprintComponent,
     
   ],
   imports: [
