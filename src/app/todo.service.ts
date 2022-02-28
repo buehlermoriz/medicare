@@ -32,7 +32,7 @@ export class TodoService extends Dexie {
   add(
     medicine: string,
      description: string, 
-     consumption_start: Date | null,
+     consumption: Date | null,
       consumption_monday: boolean,
    consumption_tuesday: boolean,
     consumption_wednesday: boolean,
@@ -51,7 +51,7 @@ export class TodoService extends Dexie {
       id: v4(), 
       done: false, 
       description: description ,
-       consumption_start: consumption_start,
+       consumption: consumption,
         consumption_monday: consumption_monday,
      consumption_tuesday: consumption_tuesday,  
     consumption_wednesday: consumption_wednesday,

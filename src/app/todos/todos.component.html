@@ -59,37 +59,11 @@
     <mat-checkbox #consumption_evening class="example-margin">Abends</mat-checkbox>
 </mat-grid-tile>
 <mat-grid-tile>
-    <button mat-raised-button (click)="add(
-        medicine.value, 
-        description.value, 
-        consumption_monday.checked, 
-        consumption_tuesday.checked,
-        consumption_wednesday.checked,
-        consumption_thirsday.checked,
-        consumption_friday.checked,
-        consumption_satturday.checked,
-        consumption_sunday.checked,
-
-        consumption_morning.checked,
-        consumption_midday.checked,
-        consumption_evening.checked
-        
-        )">Hinzufügen</button>
+    <button mat-raised-button (click)="splitTimeslot( 
+    medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
+    consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
+    consumption_evening.checked)">Hinzufügen</button>
 <button mat-raised-button (click)="sync()">Sync</button>
-<button mat-raised-button (click)="splitTimeslot( medicine.value, 
-description.value, 
-consumption_monday.checked, 
-consumption_tuesday.checked,
-consumption_wednesday.checked,
-consumption_thirsday.checked,
-consumption_friday.checked,
-consumption_satturday.checked,
-consumption_sunday.checked,
-
-consumption_morning.checked,
-consumption_midday.checked,
-consumption_evening.checked)">Test</button>
-
 
 </mat-grid-tile>
 
@@ -120,7 +94,7 @@ consumption_evening.checked)">Test</button>
                     Einnehmen am:
                 </td>
                 <td>
-                    {{ todo.consumption_start }}
+                    {{ todo.consumption }}
                 </td>
             </tr>
             <tr>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -40,85 +39,65 @@ export class TodosComponent implements OnInit {
    consumption_midday : boolean,
    consumption_evening : boolean){
     
-     var startDate = this.range.get("start")?.value;
+     const startDate = this.range.get("start")?.value;
     //  var startDateFormated = (moment(startDate)).format('DD-MMM-YYYY')
 
      var endDate = this.range.get("end")?.value;
-    //  var endDateFormated = (moment(endDate)).format('DD-MMM-YYYY')
-    
 
      for(var day = startDate; day <= endDate; day.setDate(day.getDate() +1)){
-      var consumption_start = day;
-      console.log(day.getDay());
-      console.log(day.getDate() + " Schleifendurchlauf");
+      var consumption = day;
       if(consumption_monday===true && day.getDay()===1){
-        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Montag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_tuesday===true && day.getDay()===2){
-        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Dienstag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_wednesday===true && day.getDay()===3){
-        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Mittwoch Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_thirsday===true && day.getDay()===4){
-        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Donnerstag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_friday===true && day.getDay()===5){
-        await this.todoService.add(medicine, description, consumption_start,  consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Freitag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_satturday===true && day.getDay()===6){
-        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Samstag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
       if(consumption_sunday===true && day.getDay()===0){
-        await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
-        console.log("Sonntag Success")
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
       }
-      // else{
-      //   alert("Bitte wählen Sie einen Wochentag aus!")
-      //   break
-      // }
-      console.log("Tag "+ day);
       }
       await this.loadTodos();
-  console.log("test");
-  console.log(day.getDay());
-  console.log(day.getDate() + " Schleifendurchlauf")
-  var helper = 0;
-  day.getDate() === helper;
-  startDate = undefined;
-  console.log(startDate);
-  
-
-      
-
-
-
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
   async add( 
-    medicine: string,
-    description: string, 
-     consumption_monday: boolean,
-   consumption_tuesday: boolean,
-   consumption_wednesday: boolean,
-   consumption_thirsday: boolean,
-   consumption_friday: boolean,
-   consumption_satturday: boolean,
-   consumption_sunday: boolean,
-   consumption_morning : boolean,
-   consumption_midday : boolean,
-   consumption_evening : boolean) {
-     var consumption_start = this.range.get("start")?.value;
-    
-
-   var id =   await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+    medicine: string,description: string, consumption_monday: boolean,consumption_tuesday: boolean,consumption_wednesday: boolean,consumption_thirsday: boolean,
+   consumption_friday: boolean,consumption_satturday: boolean,consumption_sunday: boolean,consumption: Date | null,consumption_morning : boolean,
+   consumption_midday : boolean,consumption_evening : boolean) {
+   var id =   await this.todoService.add(medicine, description, consumption, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
   }
 
