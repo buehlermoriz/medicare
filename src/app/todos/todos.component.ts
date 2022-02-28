@@ -24,8 +24,6 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this.loadTodos();
   }
-//Datepicker----------------------------------------------------------------------------------------------------------------------------------------
-
 
   //erzeugt mehrere Events, da ein Mediakament mehrere Tage eingenommen werden muss -------------------------------------------------------
   async splitTimeslot(medicine: string,
@@ -44,6 +42,10 @@ export class TodosComponent implements OnInit {
      var startDate = this.range.get("start")?.value
      var endDate = this.range.get("end")?.value
     
+     for(var day = startDate; day <= endDate; day.setDate){
+
+     }
+
     console.log(this.range.get("start")?.value);
 
 
