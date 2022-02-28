@@ -129,8 +129,15 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-    
+this.sortByDueDate();
+   
   }
  
+  async sortByDueDate() {
+   this.todos.sort((a: Todo, b: Todo) => {
+      return a.consumption!.getTime() - b.consumption!.getTime();
+
+    });
+}
   
 }
