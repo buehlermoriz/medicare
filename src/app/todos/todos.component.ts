@@ -12,9 +12,9 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-  todos: Todo[] = [];
-  selected = "1"
-  range = new FormGroup({
+    todos: Todo[] = [];
+    selected = "1"
+    range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),
   });

@@ -30,6 +30,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
+import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -67,6 +68,7 @@ FullCalendarModule.registerPlugins([
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    MatCardModule,
     MatListModule,
     MatGridListModule,
     MatInputModule,
