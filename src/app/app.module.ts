@@ -32,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
 import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
 
+
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   timeGridPlugin,
@@ -79,6 +80,7 @@ FullCalendarModule.registerPlugins([
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
