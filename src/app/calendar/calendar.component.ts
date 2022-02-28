@@ -37,7 +37,7 @@ export class CalendarComponent implements OnInit {
   let todos =  this.todoService.getAllCalendar();
   const calendarApi = selectInfo.view.calendar;
   calendarApi.unselect();
-  
+  alert(selectInfo.view.calendar);
   /*
 for(let todo in todos){
   calendarApi.addEvent({
@@ -48,6 +48,13 @@ for(let todo in todos){
   });
 
 }*/
+
+calendarApi.addEvent({
+  id: "1",
+  title: "test",
+  start: selectInfo.startStr,
+  end: selectInfo.endStr,
+})
 }
 }
 
