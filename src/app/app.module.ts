@@ -31,6 +31,7 @@ import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
 
+
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   timeGridPlugin,
@@ -77,6 +78,7 @@ FullCalendarModule.registerPlugins([
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
