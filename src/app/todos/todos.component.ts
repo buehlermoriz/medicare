@@ -65,6 +65,9 @@ export class TodosComponent implements OnInit {
     await this.todoService.deleteToDo(todo);
      
   }
+  async loadTheOne(todo: Todo){
+    await this.todoService.getToDo(todo);
+  }
 
   async test()  {
     console.log("test");

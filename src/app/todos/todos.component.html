@@ -119,20 +119,45 @@ consumption_evening.checked)">Test</button>
                 <td>
                     Einnehmen an den Tagen:
                 </td>
-                <td>
-                        !Funktion fehlt noch!
+                <td   *ngIf="todo.consumption_monday== true">
+                      Montag
                 </td>
+                <td   *ngIf="todo.consumption_tuesday== true">
+                    Dienstag
+              </td>
+              <td   *ngIf="todo.consumption_wednesday== true">
+                Mittwoch
+          </td>
+          <td   *ngIf="todo.consumption_thirsday== true">
+            Donnerstag
+      </td>
+      <td   *ngIf="todo.consumption_friday== true">
+        Freitag
+  </td>
+  <td   *ngIf="todo.consumption_satturday== true">
+    Samstag
+</td>
+<td   *ngIf="todo.consumption_sunday== true">
+    Sonntag
+</td>
+  
             </tr>
             <tr>
-                <td>
+                <td *ngIf="todo.consumption_morning== true or todo.consumption_midday== true or todo.consumption_evening== true">
                     Zur Uhrzeit ... einnahmen:
                 </td>
-                <td>
-                    !Funktion fehlt noch!
+                <td   *ngIf="todo.consumption_morning== true">
+                    Morgens
+                </td>
+                <td   *ngIf="todo.consumption_midday== true">
+                    Mittags
+                </td>
+                <td   *ngIf="todo.consumption_evening== true">
+                    Abends
                 </td>
             </tr>
             <button mat-raised-button (click)="delete(todo)">Delete To Do</button>
-            <button mat-raised-button (click)="test()">Update</button>
+            <button mat-raised-button><a mat-list-item routerLink="update">Update</a></button>
              </table>
               
            </li>

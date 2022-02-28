@@ -24,6 +24,11 @@ export class TodoService extends Dexie {
     return this.todos.toArray();
   }
 
+  getToDo(todo :Todo) {
+    console.log(this.todos.get(todo.id));
+    return this.todos.get(todo.id);
+  }
+
   getAllCalendar() {
    
     return this.todos;
@@ -82,11 +87,18 @@ consumption_midday: consumption_midday,
     
   }
   
-  deleteToDoNewContent(todo :Todo,  textDescription: String) {
-    return this.todos.delete(todo.id); 
-    //add new content
+//   deleteToDoNewContent(todo :Todo,  textDescription: String) {
+//     this.addNewAfterContentChange(todo, textDescription);
+//     return this.todos.delete(todo.id); 
+    
+
+// }
+addNewAfterContentChange(todo :Todo,  description: String ) {
+  //  return this.todos.put(todo.description);
 }
-addNewAfterContentChange(todo :Todo,  textDescription: String ) {
-  // return this.todos.add({todo.description});
+async PutMethod(todo: Todo, NewDescription:string, description:string){
+  description = NewDescription ;
+   return this.todos.update( todo ,{ description } );
 }
+
 }

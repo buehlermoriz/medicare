@@ -19,11 +19,17 @@ export class UpdateComponent implements OnInit {
   //   return todo;
   // }
   async loadStart(){
+    console.log("loaded")
     this.todos = await this.todoService.getAll();
   }
-  async postNewContent(todo: Todo){
+
+  async PutMethod(todo: Todo, NewDescription:string, description:string){
+     await this.todoService.PutMethod(todo, NewDescription, description);
+     
+  }
+  async postNewContent(todo: Todo, description:string){
     var textDescription = (<HTMLInputElement>document.getElementById("newDescription")).value; 
     console.log(textDescription);
-    await this.todoService.deleteToDoNewContent(todo, textDescription);
+    await this.todoService.PutMethod(todo, textDescription, description);
   }
 }

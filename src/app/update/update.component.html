@@ -1,23 +1,103 @@
-<p>update works!</p>
 
     <ul>
         <button (click)="loadStart()"></button>
-      
+        <mat-grid-list cols="2" rowHeight="50px" >
+
         <li *ngFor="let todo of todos">
-            <!-- <button (click)="load(todo)"></button> -->
+             <!-- <button (click)="load(todo)"></button> -->
           <table>
             <tr>
-                
+                <td>
+                    <mat-form-field class="input-full-width" appearance="fill">
+                        <mat-label>{{ todo.medicine }}</mat-label>
+                        <input #newDescription matInput placeholder="new medicine name"  id="newMedicine">
+                      </mat-form-field>
+                </td>
+
                 <td>
                     <mat-form-field class="input-full-width" appearance="fill">
                         <mat-label>{{ todo.description }}</mat-label>
-                        <input #medicine matInput placeholder="new description"  id="newDescription">
+                        <input #newDescription matInput placeholder="new description"  id="newDescription">
                       </mat-form-field>
                 </td>
-                <button mat-raised-button (click)="postNewContent(todo)">Speichern</button>
+
+                <!-- <td>
+                    <mat-form-field class="input-full-width" appearance="fill">
+                        <mat-label>  {{ todo.consumption_day }}</mat-label>
+                        <input #newDescription matInput placeholder="new description"  id="newDescription">
+                      </mat-form-field>
+                </td> -->
+                </tr>
+                <tr>
+        
+                <mat-grid-tile>
+                    <mat-checkbox #consumption_monday class="example-margin">Montag</mat-checkbox>
+                    <mat-checkbox #consumption_tuesday class="example-margin">Dienstag</mat-checkbox>
+                    <mat-checkbox #consumption_wednesday class="example-margin">Mittwoch</mat-checkbox>
+                    <mat-checkbox #consumption_thirsday class="example-margin">Donnerstag</mat-checkbox>
+                    <mat-checkbox #consumption_friday class="example-margin">Freitag</mat-checkbox>
+                    <mat-checkbox #consumption_satturday class="example-margin">Samstag</mat-checkbox>
+                    <mat-checkbox #consumption_sunday class="example-margin">Sonntag</mat-checkbox>
+                </mat-grid-tile>
+            </tr>
+              <tr>
+
+                <button mat-raised-button (click)="PutMethod(todo, newDescription.value, todo.description)">Speichern</button>
             </tr>
             
-              
+        </table>
+        </li>
+        </mat-grid-list>
+
+        <mat-grid-list cols="2" rowHeight="50px" >
+
+            <!-- Inputelemente schöner gestalten!-->
+            <mat-grid-tile>
+                Name Medikament: 
+            </mat-grid-tile>
+            <mat-grid-tile> 
+                <mat-form-field class="input-full-width" appearance="fill">
+                    <mat-label>Medikament</mat-label>
+                    <input #medicine matInput placeholder="z.B. Ibuprufen" >
+                  </mat-form-field>
+            </mat-grid-tile>     
+            <mat-grid-tile>
+                Beschreibung des Medikaments: 
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="input-full-width" appearance="fill">
+                    <mat-label>Beschreibung</mat-label>
+                    <input #description matInput placeholder="z.B. blaue Dose" >
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                An folgenden Wochentagen einnehmen:
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-checkbox #consumption_monday class="example-margin">Montag</mat-checkbox>
+                <mat-checkbox #consumption_tuesday class="example-margin">Dienstag</mat-checkbox>
+                <mat-checkbox #consumption_wednesday class="example-margin">Mittwoch</mat-checkbox>
+                <mat-checkbox #consumption_thirsday class="example-margin">Donnerstag</mat-checkbox>
+                <mat-checkbox #consumption_friday class="example-margin">Freitag</mat-checkbox>
+                <mat-checkbox #consumption_satturday class="example-margin">Samstag</mat-checkbox>
+                <mat-checkbox #consumption_sunday class="example-margin">Sonntag</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                Medikament einnehmen bis: 
+            </mat-grid-tile>
+            <mat-grid-tile>
+                
+                <input required type="date" #consumption_day>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                Häufigkeit der Einnahme:  
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-checkbox #consumption_morning class="example-margin">Morgens</mat-checkbox>
+                <mat-checkbox #consumption_midday class="example-margin">Mittags</mat-checkbox>
+                <mat-checkbox #consumption_evening class="example-margin">Abends</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
          
   
    
