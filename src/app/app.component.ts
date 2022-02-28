@@ -8,7 +8,7 @@ import { SwPush, SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-pwa';
+  title = 'medicare';
 
   constructor(swUpdate: SwUpdate, private swPush: SwPush, private httpClient: HttpClient) {
     swUpdate.available.subscribe(() => {

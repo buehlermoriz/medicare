@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
+import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -11,16 +14,22 @@ import { TodoService } from '../todo.service';
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   selected = "1"
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl(),
+  });
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
     this.loadTodos();
   }
+//Datepicker----------------------------------------------------------------------------------------------------------------------------------------
 
+
+  //erzeugt mehrere Events, da ein Mediakament mehrere Tage eingenommen werden muss -------------------------------------------------------
   async splitTimeslot(medicine: string,
     description: string, 
-     consumption_day: Date | null,
      consumption_monday: boolean,
    consumption_tuesday: boolean,
    consumption_wednesday: boolean,
@@ -31,16 +40,19 @@ export class TodosComponent implements OnInit {
    consumption_morning : boolean,
    consumption_midday : boolean,
    consumption_evening : boolean){
-    /*  var startDate = new Date().toISOString().slice(0, 10)
-     var endDate = consumption_day
-     alert(startDate + endDate);*/
+    
+     var startDate = this.range.get("start")?.value
+     var endDate = this.range.get("end")?.value
+    
+    console.log(this.range.get("start")?.value);
+
 
   }
 
+    //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
   async add( 
     medicine: string,
     description: string, 
-     consumption_day: Date | null,
      consumption_monday: boolean,
    consumption_tuesday: boolean,
    consumption_wednesday: boolean,
@@ -51,7 +63,10 @@ export class TodosComponent implements OnInit {
    consumption_morning : boolean,
    consumption_midday : boolean,
    consumption_evening : boolean) {
-   var id =   await this.todoService.add(medicine, description, consumption_day, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+     var consumption_start = this.range.get("start")?.value;
+     var consumption_end = this.range.get("end")?.value;
+
+   var id =   await this.todoService.add(medicine, description, consumption_start, consumption_end, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
   }
 

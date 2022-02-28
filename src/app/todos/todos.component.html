@@ -36,8 +36,19 @@
     Medikament einnehmen bis: 
 </mat-grid-tile>
 <mat-grid-tile>
-    
-    <input required type="date" #consumption_day>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+          <input  matStartDate formControlName="start" placeholder="Start date">
+          <input matEndDate formControlName="end" placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      
+      </mat-form-field>
+      
+      <p>Selected range: {{range.value | json}}</p>
+
 </mat-grid-tile>
 <mat-grid-tile>
     Häufigkeit der Einnahme:  
@@ -51,8 +62,6 @@
     <button mat-raised-button (click)="add(
         medicine.value, 
         description.value, 
-        consumption_day.valueAsDate, 
-        
         consumption_monday.checked, 
         consumption_tuesday.checked,
         consumption_wednesday.checked,
@@ -69,8 +78,6 @@
 <button mat-raised-button (click)="sync()">Sync</button>
 <button mat-raised-button (click)="splitTimeslot( medicine.value, 
 description.value, 
-consumption_day.valueAsDate, 
-
 consumption_monday.checked, 
 consumption_tuesday.checked,
 consumption_wednesday.checked,
@@ -82,6 +89,7 @@ consumption_sunday.checked,
 consumption_morning.checked,
 consumption_midday.checked,
 consumption_evening.checked)">Test</button>
+
 
 </mat-grid-tile>
 
@@ -112,7 +120,7 @@ consumption_evening.checked)">Test</button>
                     Einnehmen bis:
                 </td>
                 <td>
-                    {{ todo.consumption_day }}
+                    {{ todo.consumption_end }}
                 </td>
             </tr>
             <tr>
