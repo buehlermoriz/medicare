@@ -24,15 +24,17 @@ export class TodoService extends Dexie {
     return this.todos.toArray();
   }
 
+  getAllCalendar() {
+   
+    return this.todos;
+  }
+
   getToDo(todo :Todo) {
     console.log(this.todos.get(todo.id));
     return this.todos.get(todo.id);
   }
 
-  getAllCalendar() {
-   
-    return this.todos;
-  }
+ 
 
   add(
     medicine: string,
