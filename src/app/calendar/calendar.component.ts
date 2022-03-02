@@ -16,6 +16,7 @@ export class CalendarComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+    
   }
 
   calendarOptions: CalendarOptions = {
@@ -32,7 +33,7 @@ export class CalendarComponent implements OnInit {
 
 
 async syncCalendar(selectInfo: DateSelectArg)  {
-   
+
   let todos =  this.todoService.getAll();
   const calendarApi = selectInfo.view.calendar;
   calendarApi.unselect();

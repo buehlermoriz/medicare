@@ -48,7 +48,7 @@ export class TodosComponent implements OnInit {
 
      var endDate = this.range.get("end")?.value;
 
-     for(var day = startDate; day <= endDate; day.setDate(day.getDate() +1)){
+     for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
       var consumption = day;
       if(consumption_monday===true && day.getDay()===1){
         this.add(
