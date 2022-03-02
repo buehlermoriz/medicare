@@ -14,7 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
@@ -30,6 +29,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
+import { HttpClientModule } from '@angular/common/http';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
