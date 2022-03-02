@@ -99,7 +99,8 @@ addNewAfterContentChange(todo :Todo,  description: String ) {
   //  return this.todos.put(todo.description);
 }
 async PutMethod(todo: Todo, NewDescription:string, description:string){
-  description = NewDescription ;
+  description = NewDescription;
+  console.log(description + "neue beschreibuung");
    return this.todos.update( todo ,{ description } );
 }
 

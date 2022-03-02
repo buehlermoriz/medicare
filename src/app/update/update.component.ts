@@ -27,9 +27,5 @@ export class UpdateComponent implements OnInit {
      await this.todoService.PutMethod(todo, NewDescription, description);
      
   }
-  async postNewContent(todo: Todo, description:string){
-    var textDescription = (<HTMLInputElement>document.getElementById("newDescription")).value; 
-    console.log(textDescription);
-    await this.todoService.PutMethod(todo, textDescription, description);
-  }
+  
 }
