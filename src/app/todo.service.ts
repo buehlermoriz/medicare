@@ -24,23 +24,24 @@ export class TodoService extends Dexie {
     return this.todos.toArray();
   }
 
-  getToDo(todo :Todo) {
-    console.log(this.todos.get(todo.id));
-    return this.todos.get(todo.id);
-  }
-
   getAllCalendar() {
    
     return this.todos;
   }
 
+  getToDo(todo :Todo) {
+    console.log(this.todos.get(todo.id));
+    return this.todos.get(todo.id);
+  }
+
+ 
+
   add(
     medicine: string,
-     description: string, 
-     consumption_start: Date | null,
-     consumption_end: Date | null,
-      consumption_monday: boolean,
-   consumption_tuesday: boolean,
+    description: string, 
+    consumption: Date | null,
+    consumption_monday: boolean,
+    consumption_tuesday: boolean,
     consumption_wednesday: boolean,
     consumption_thirsday: boolean,
     consumption_friday: boolean,
@@ -56,20 +57,19 @@ export class TodoService extends Dexie {
       medicine: medicine, 
       id: v4(), 
       done: false, 
-      description: description ,
-       consumption_start: consumption_start,
-       consumption_end: consumption_end,
-        consumption_monday: consumption_monday,
-     consumption_tuesday: consumption_tuesday,  
-    consumption_wednesday: consumption_wednesday,
-  consumption_thirsday: consumption_thirsday,
-consumption_friday: consumption_friday,
-consumption_satturday: consumption_satturday,
-consumption_sunday: consumption_sunday,
+      description: description,
+      consumption: consumption,
+      consumption_monday: consumption_monday,
+      consumption_tuesday: consumption_tuesday,  
+      consumption_wednesday: consumption_wednesday,
+      consumption_thirsday: consumption_thirsday,
+      consumption_friday: consumption_friday,
+      consumption_satturday: consumption_satturday,
+      consumption_sunday: consumption_sunday,
 
-consumption_morning: consumption_morning,
-consumption_midday: consumption_midday,
-    consumption_evening:consumption_evening});
+      consumption_morning: consumption_morning,
+      consumption_midday: consumption_midday,
+      consumption_evening:consumption_evening});
   }
 
   toggleDone(todo: Todo) {

@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatCardModule } from '@angular/material/card';
+
 
 import { ImprintComponent } from './imprint.component';
 
@@ -8,7 +11,11 @@ describe('ImprintComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImprintComponent ]
+      declarations: [ ImprintComponent ],
+      imports: [
+        MatCardModule,
+        LayoutModule,
+      ]
     })
     .compileComponents();
   });
