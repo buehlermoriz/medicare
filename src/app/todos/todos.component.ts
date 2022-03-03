@@ -42,9 +42,13 @@ export class TodosComponent implements OnInit {
      const startDate = this.range.get("start")?.value;
     //  var startDateFormated = (moment(startDate)).format('DD-MMM-YYYY')
 
+    //----------------------------------------------------------------------------------------------------------------------------------
+    console.log(startDate);
+    //----------------------------------------------------------------------------------------------------------------------------------
+
      var endDate = this.range.get("end")?.value;
 
-     for(var day = startDate; day <= endDate; day.setDate(day.getDate() +1)){
+     for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
       var consumption = day;
       if(consumption_monday===true && day.getDay()===1){
         this.add(
@@ -90,6 +94,10 @@ export class TodosComponent implements OnInit {
       }
       }
       await this.loadTodos();
+
+         //----------------------------------------------------------------------------------------------------------------------------------
+    console.log(startDate);
+    //----------------------------------------------------------------------------------------------------------------------------------
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
@@ -129,8 +137,15 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-    
+this.sortByDueDate();
+   
   }
  
+  async sortByDueDate() {
+   this.todos.sort((a: Todo, b: Todo) => {
+      return a.consumption!.getTime() - b.consumption!.getTime();
+
+    });
+}
   
 }
