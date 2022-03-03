@@ -1,9 +1,13 @@
 .imprint-card {
       max-width: 90%; 
-      padding: 40px;
+      margin: 50px; 
   }
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  .instagram-header-image {
+    background-image: url('/assets/pictures/insta.png');
     background-size: cover;
+  }
+  .instadesc{
+      padding-left: 50px;
+      padding-top: 8px;
   }
