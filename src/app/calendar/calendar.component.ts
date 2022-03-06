@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
-import * as moment from 'moment';
+//import * as moment from 'moment';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import { createEventId } from './event-ulits';
@@ -38,7 +38,7 @@ async syncCalendar(selectInfo: DateSelectArg)  {
   const calendarApi = selectInfo.view.calendar;
   calendarApi.unselect();
   
-for(let todo of await todos){
+/*for(let todo of await todos){
   var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
   calendarApi.addEvent({
     id: todo.id,
@@ -46,7 +46,7 @@ for(let todo of await todos){
     start: DateFormated,
     end: DateFormated,
   });
-}
+}*/
 }
 }
 
