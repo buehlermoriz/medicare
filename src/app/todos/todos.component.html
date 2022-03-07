@@ -46,8 +46,6 @@
         <mat-date-range-picker #picker></mat-date-range-picker>
       
       </mat-form-field>
-      
-      <p>Selected range: {{range.value | json}}</p>
 
 </mat-grid-tile>
 <mat-grid-tile>
@@ -125,7 +123,7 @@
   
             </tr>
             <tr>
-                <td *ngIf="todo.consumption_morning== true  or todo.consumption_midday== true or todo.consumption_evening== true">
+                <td *ngIf="todo.consumption_morning== true || todo.consumption_midday== true || todo.consumption_evening== true">
                     Zur Uhrzeit ... einnahmen:
                 </td>
                 <td   *ngIf="todo.consumption_morning== true">
@@ -138,8 +136,8 @@
                     Abends
                 </td>
             </tr>
-            <button mat-raised-button (click)="delete(todo)">Delete To Do</button>
-            <button mat-raised-button><a mat-list-item [routerLink]="['update', todo.id]">Update</a></button>
+            <button mat-raised-button color="primary" (click)="delete(todo)">Delete To Do</button>
+            <button mat-raised-button color="accent"><a mat-list-item routerLink="update">Update</a></button>
              </table>
               
            </li>

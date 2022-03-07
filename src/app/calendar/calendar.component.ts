@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
-import * as moment from 'moment';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
-import { createEventId } from './event-ulits';
+import {CalendarOptions } from '@fullcalendar/angular';
+import { TodoService, INITIAL_EVENTS } from '../todo.service';
 
 
 @Component({
@@ -13,9 +10,12 @@ import { createEventId } from './event-ulits';
 })
 export class CalendarComponent implements OnInit {
    
-  constructor(private todoService: TodoService) { }
-
+  constructor(private todoService: TodoService) {
+  }
+  
   ngOnInit(): void {
+    this.todoService.syncCalendar();
+    
   }
 
   calendarOptions: CalendarOptions = {
@@ -25,28 +25,10 @@ export class CalendarComponent implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    select: this.syncCalendar.bind(this),
-    events: [
-    ]
+    initialEvents: INITIAL_EVENTS,   
   };
-
-
-async syncCalendar(selectInfo: DateSelectArg)  {
-   
-  let todos =  this.todoService.getAll();
-  const calendarApi = selectInfo.view.calendar;
-  calendarApi.unselect();
   
-for(let todo of await todos){
-  var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
-  calendarApi.addEvent({
-    id: todo.id,
-    title: todo.medicine,
-    start: DateFormated,
-    end: DateFormated,
-  });
-}
-}
+ 
 }
 
 

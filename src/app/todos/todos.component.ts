@@ -23,6 +23,8 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTodos();
+    
+
   }
 //Datepicker----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,7 +48,54 @@ export class TodosComponent implements OnInit {
     
     console.log(this.range.get("start")?.value);
 
-
+     for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
+      var consumption = day;
+      if(consumption_monday===true && day.getDay()===1){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_tuesday===true && day.getDay()===2){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_wednesday===true && day.getDay()===3){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_thirsday===true && day.getDay()===4){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_friday===true && day.getDay()===5){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_satturday===true && day.getDay()===6){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      if(consumption_sunday===true && day.getDay()===0){
+        this.add(
+          medicine, description, consumption_monday, consumption_tuesday,consumption_wednesday,consumption_thirsday,consumption_friday,
+          consumption_satturday, consumption_sunday, consumption,consumption_morning,consumption_midday,consumption_evening
+          )
+      }
+      }
+    
+      await this.loadTodos(); 
+      
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
@@ -68,6 +117,7 @@ export class TodosComponent implements OnInit {
 
    var id =   await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
+
   }
 
   async sync() {
@@ -98,7 +148,10 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-    
+    this.sortByDueDate();
+    // Elemente werden in den Kalender geladen 
+    this.todoService.syncCalendar();
+   
   }
  
   
