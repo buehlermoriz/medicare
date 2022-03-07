@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 
@@ -8,9 +9,9 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
-  todos: Todo[] = [];
+  todo?:Todo;
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService, private  activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class UpdateComponent implements OnInit {
   // }
   async loadStart(){
     console.log("loaded")
-    this.todos = await this.todoService.getAll();
+    this.todo = (await this.todoService.getAll()).find(t => t.id === this.activatedRoute.snapshot.params['id']);
   }
 
   async PutMethod(todo: Todo, NewDescription:string, description:string){

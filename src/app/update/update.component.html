@@ -1,5 +1,5 @@
 <button (click)="loadStart()"></button>
-          <mat-grid-list  *ngFor="let todo of todos" cols="2" rowHeight="50px" >
+          <mat-grid-list  *ngIf="todo" cols="2" rowHeight="50px" >
 
             <!-- Inputelemente schöner gestalten!-->
             <mat-grid-tile>

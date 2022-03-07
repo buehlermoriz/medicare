@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: TodosComponent },
   { path: 'about', component: AboutComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'update', component: UpdateComponent },
+  { path: 'update/:id', component: UpdateComponent },
   { path: 'imprint', component: ImprintComponent }
 ];
 

@@ -139,7 +139,7 @@
                 </td>
             </tr>
             <button mat-raised-button (click)="delete(todo)">Delete To Do</button>
-            <button mat-raised-button><a mat-list-item routerLink="update">Update</a></button>
+            <button mat-raised-button><a mat-list-item [routerLink]="['update', todo.id]">Update</a></button>
              </table>
               
            </li>
