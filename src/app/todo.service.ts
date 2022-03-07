@@ -3,7 +3,12 @@ import { Injectable } from '@angular/core';
 import { Dexie } from 'dexie';
 import { v4 } from 'uuid';
 import { Todo } from './todo';
+import {EventInput, CalendarOptions } from '@fullcalendar/angular';
+import * as moment from 'moment';
 
+
+
+export const INITIAL_EVENTS: EventInput[] = [];
 
 
 @Injectable({
@@ -89,6 +94,27 @@ export class TodoService extends Dexie {
     return this.todos.delete(todo.id); 
     
   }
+
+  async syncCalendar()  {
+    let todos =  this.getAll();
+  
+    if(INITIAL_EVENTS.length != (await todos).length){
+      for(let todo of await todos){
+        var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
+        INITIAL_EVENTS.push(
+          
+          { id: todo.id,
+            title: todo.medicine,
+            start: DateFormated,
+            end: DateFormated},)
+          };
+        }
+        else{
+          return
+        }
+  
+  
+      }
   
 //   deleteToDoNewContent(todo :Todo,  textDescription: String) {
 //     this.addNewAfterContentChange(todo, textDescription);

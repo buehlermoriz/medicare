@@ -23,6 +23,8 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTodos();
+    
+
   }
 
   //erzeugt mehrere Events, da ein Mediakament mehrere Tage eingenommen werden muss -------------------------------------------------------
@@ -95,6 +97,7 @@ export class TodosComponent implements OnInit {
       }
     
       await this.loadTodos(); 
+      
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
@@ -135,7 +138,9 @@ export class TodosComponent implements OnInit {
 
   async loadTodos() {
     this.todos = await this.todoService.getAll();
-this.sortByDueDate();
+    this.sortByDueDate();
+    // Elemente werden in den Kalender geladen 
+    this.todoService.syncCalendar();
    
   }
  
