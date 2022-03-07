@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
 import * as moment from 'moment';
-import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
-import { createEventId } from './event-ulits';
+//import { INITIAL_EVENTS } from './eventutils';
 
 
 @Component({
@@ -26,6 +25,7 @@ export class CalendarComponent implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
+   // initialEvents: INITIAL_EVENTS,
     select: this.syncCalendar.bind(this),
     events: [
     ]
