@@ -93,11 +93,8 @@ export class TodosComponent implements OnInit {
           )
       }
       }
-      await this.loadTodos();
-
-         //----------------------------------------------------------------------------------------------------------------------------------
-    console.log(startDate);
-    //----------------------------------------------------------------------------------------------------------------------------------
+    
+      await this.loadTodos(); 
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
@@ -107,6 +104,7 @@ export class TodosComponent implements OnInit {
    consumption_midday : boolean,consumption_evening : boolean) {
    var id =   await this.todoService.add(medicine, description, consumption, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
+
   }
 
   async sync() {

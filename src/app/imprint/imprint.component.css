@@ -11,3 +11,7 @@
       padding-left: 50px;
       padding-top: 8px;
   }
+
+  .mat-card{
+     font-family: "Raleway", "Helvetica Neue", sans-serif !important;
+  }

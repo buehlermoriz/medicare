@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
+import {EventInput, CalendarOptions } from '@fullcalendar/angular';
 import * as moment from 'moment';
-import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
-//import { INITIAL_EVENTS } from './eventutils';
 
+const INITIAL_EVENTS: EventInput[] = [];
 
 @Component({
   selector: 'app-calendar',
@@ -13,10 +12,12 @@ import { TodoService } from '../todo.service';
 })
 export class CalendarComponent implements OnInit {
    
-  constructor(private todoService: TodoService) { }
-
+  constructor(private todoService: TodoService) {
+  }
+  
   ngOnInit(): void {
-    
+    this.syncCalendar();
+    console.log(INITIAL_EVENTS);
   }
 
   calendarOptions: CalendarOptions = {
@@ -26,29 +27,30 @@ export class CalendarComponent implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-   // initialEvents: INITIAL_EVENTS,
-    select: this.syncCalendar.bind(this),
-    events: [
-    ]
+    initialEvents: INITIAL_EVENTS,   
   };
-
-
-async syncCalendar(selectInfo: DateSelectArg)  {
-
-  let todos =  this.todoService.getAll();
-  const calendarApi = selectInfo.view.calendar;
-  calendarApi.unselect();
   
-/*for(let todo of await todos){
-  var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
-  calendarApi.addEvent({
-    id: todo.id,
-    title: todo.medicine,
-    start: DateFormated,
-    end: DateFormated,
-  });
-}*/
-}
+ async syncCalendar()  {
+  let todos =  this.todoService.getAll();
+
+  if(INITIAL_EVENTS.length != (await todos).length){
+    for(let todo of await todos){
+      var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
+      INITIAL_EVENTS.push(
+        
+        { id: todo.id,
+          title: todo.medicine,
+          start: DateFormated,
+          end: DateFormated},)
+        };
+    console.log( INITIAL_EVENTS);
+      }
+      else{
+        return
+      }
+
+
+    }
 }
 
 
