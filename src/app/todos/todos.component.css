@@ -16,5 +16,22 @@
 ul {
     list-style-type: none; 
     
-    
+   
+}
+.notVisible{
+
+    /* visibility: hidden; */
+    visibility: collapse;
+    height: 0px;
+    width: 0px;
+}
+.visible{
+    visibility: visible;
+
+}
+#add{
+    padding: 20px;
+}
+#AddButton{
+    margin: 20px;
 }

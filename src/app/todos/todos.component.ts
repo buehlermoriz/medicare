@@ -23,6 +23,7 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTodos();
+    var clicked = false;
     
 
   }
@@ -99,6 +100,7 @@ export class TodosComponent implements OnInit {
       }
     
       await this.loadTodos(); 
+      this.remove();
       
   }
 
@@ -152,5 +154,26 @@ export class TodosComponent implements OnInit {
  
      });
  }
+//  addVisibilty(){
+//   document.getElementsByClassName("notVisible")[0].classList.toggle("visible");
+//  }
+
+ addVisibilty(): void {
+  document.getElementsByClassName("notVisible")[0].classList.remove("notVisible");
+  document.getElementById("add")?.classList.add("visible");
+  document.getElementById("AddButton")?.classList.add("notVisible");
+
+  
+      }
+
+      remove(): void {
+        
+        document.getElementsByClassName("visible")[0].classList.remove("visible");
+        document.getElementById("AddButton")?.classList.remove("notVisible");
+        document.getElementById("AddButton")?.classList.add("visible");
+        document.getElementById("add")?.classList.add("notVisible");
+       
+        
+            }
  
 }
