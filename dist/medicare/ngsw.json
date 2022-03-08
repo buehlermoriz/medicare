@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1646239894662,
+  "timestamp": 1646679411578,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.84b46c16143ee4b6.js",
+        "/main.10bc77e36725f144.js",
         "/manifest.webmanifest",
         "/polyfills.933eeb8bf4aae247.js",
         "/runtime.c9dfb54d1a766823.js",
-        "/styles.646a86ae6de906cb.css"
+        "/styles.47aa07bb49aa6d92.css"
       ],
       "patterns": []
     },
@@ -36,7 +36,9 @@
         "/assets/icons/icon-384x384.png",
         "/assets/icons/icon-512x512.png",
         "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png"
+        "/assets/icons/icon-96x96.png",
+        "/assets/pictures/insta.png",
+        "/assets/pictures/medicare_logo.png"
       ],
       "patterns": []
     }
@@ -51,13 +53,15 @@
     "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/pictures/insta.png": "1725ba7495bb6b4f003a0fe9846ed7425338aeb3",
+    "/assets/pictures/medicare_logo.png": "5d58b412a794fa44e954868231b9e3e2bc5f8966",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "002552a7aa9ad1e379d4488ed6ad9ba61c7a8b76",
-    "/main.84b46c16143ee4b6.js": "40aad9940e1a5d8b4448ce9652a618263ac02dda",
+    "/index.html": "0e7544d2dfe1c3f520628bc5f85125d48bb26333",
+    "/main.10bc77e36725f144.js": "3299362b10707ce7e1379e3872aacb9b4ffea9cc",
     "/manifest.webmanifest": "ed9d1fcf12da5df2daf662928fac684c5f08a3c8",
     "/polyfills.933eeb8bf4aae247.js": "b08673a83b85224a2b8dc4eb9700927684b082c7",
     "/runtime.c9dfb54d1a766823.js": "8d2a092a9568a9e35127984707e07c1979eafb39",
-    "/styles.646a86ae6de906cb.css": "3281b5265577c470b3e119fb1d07c04f89e3f16e"
+    "/styles.47aa07bb49aa6d92.css": "1ba58e2706e9176d0b51d8dc618e10b69e6dd377"
   },
   "navigationUrls": [
     {

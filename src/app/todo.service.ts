@@ -125,10 +125,42 @@ export class TodoService extends Dexie {
 addNewAfterContentChange(todo :Todo,  description: String ) {
   //  return this.todos.put(todo.description);
 }
-async PutMethod(todo: Todo, NewDescription:string, description:string){
+async PutMethodDescription(todo: Todo, NewDescription:string, description:string){
   description = NewDescription;
   console.log(description + "neue beschreibuung");
    return this.todos.update( todo ,{ description } );
 }
+async PutMethodNewMedicineName(todo: Todo, NewMedicineName:string, medicine:string){
+  medicine = NewMedicineName;
+  console.log(medicine + "neue Medizinname");
+   return this.todos.update( todo ,{ medicine } );
+}
+// .PutMethodCheckEvening(todo, check_consumption_evening, todo.consumption_evening);
+async PutMethodCheckTime(todo: Todo, check_consumption_evening:boolean,check_consumption_midday:boolean, check_consumption_morning:boolean){
+  todo.consumption_evening = check_consumption_evening;
+  todo.consumption_midday = check_consumption_midday;
+  todo.consumption_morning = check_consumption_morning;
+  this.todos.put(todo);
+}
 
+//hier kann man über die namen der methoden nachdenken.. this is not the way
+async PutMethodCheckDays(todo: Todo, check_consumption_monday:boolean,check_consumption_tuesday:boolean, check_consumption_wednesday:boolean, check_consumption_thirsday:boolean,check_consumption_friday:boolean, check_consumption_satturday:boolean, check_consumption_sunday:boolean){
+  todo.consumption_monday = check_consumption_monday;
+  todo.consumption_tuesday = check_consumption_tuesday;
+  todo.consumption_wednesday = check_consumption_wednesday;
+  todo.consumption_thirsday = check_consumption_tuesday;
+  todo.consumption_friday = check_consumption_friday;
+  todo.consumption_satturday = check_consumption_satturday;
+  todo.consumption_thirsday = check_consumption_sunday;  
+  
+  this.todos.put(todo);
+}
+
+async PutMethodNewConsumptionDate(todo: Todo, new_consumption_day:Date, consumption:Date | null){
+  consumption = new_consumption_day;
+  console.log(consumption + "neuer Tag zum Einnehmen");
+   return this.todos.update( todo ,{ consumption } );
+}
+
+// PutMethodNewConsumptionDate(todo, new_consumption_day, todo.consumption);
 }
