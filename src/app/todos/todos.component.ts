@@ -29,8 +29,8 @@ export class TodosComponent implements OnInit {
 //Datepicker----------------------------------------------------------------------------------------------------------------------------------------
 
 
-  //erzeugt mehrere Events, da ein Mediakament mehrere Tage eingenommen werden muss -------------------------------------------------------
-  async splitTimeslot(medicine: string,
+   //erzeugt mehrere Events, da ein Mediakament mehrere Tage eingenommen werden muss -------------------------------------------------------
+   async splitTimeslot(medicine: string,
     description: string, 
      consumption_monday: boolean,
    consumption_tuesday: boolean,
@@ -43,10 +43,14 @@ export class TodosComponent implements OnInit {
    consumption_midday : boolean,
    consumption_evening : boolean){
     
-     var startDate = this.range.get("start")?.value
-     var endDate = this.range.get("end")?.value
-    
-    console.log(this.range.get("start")?.value);
+     const startDate = this.range.get("start")?.value;
+    //  var startDateFormated = (moment(startDate)).format('DD-MMM-YYYY')
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    console.log(startDate);
+    //----------------------------------------------------------------------------------------------------------------------------------
+
+     var endDate = this.range.get("end")?.value;
 
      for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
       var consumption = day;
@@ -100,22 +104,10 @@ export class TodosComponent implements OnInit {
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
   async add( 
-    medicine: string,
-    description: string, 
-     consumption_monday: boolean,
-   consumption_tuesday: boolean,
-   consumption_wednesday: boolean,
-   consumption_thirsday: boolean,
-   consumption_friday: boolean,
-   consumption_satturday: boolean,
-   consumption_sunday: boolean,
-   consumption_morning : boolean,
-   consumption_midday : boolean,
-   consumption_evening : boolean) {
-     var consumption_start = this.range.get("start")?.value;
-     var consumption_end = this.range.get("end")?.value;
-
-   var id =   await this.todoService.add(medicine, description, consumption_start, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
+    medicine: string,description: string, consumption_monday: boolean,consumption_tuesday: boolean,consumption_wednesday: boolean,consumption_thirsday: boolean,
+   consumption_friday: boolean,consumption_satturday: boolean,consumption_sunday: boolean,consumption: Date | null,consumption_morning : boolean,
+   consumption_midday : boolean,consumption_evening : boolean) {
+   var id =   await this.todoService.add(medicine, description, consumption, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
 
   }
@@ -154,5 +146,11 @@ export class TodosComponent implements OnInit {
    
   }
  
-  
+  async sortByDueDate() {
+    this.todos.sort((a: Todo, b: Todo) => {
+       return a.consumption!.getTime() - b.consumption!.getTime();
+ 
+     });
+ }
+ 
 }
