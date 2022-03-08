@@ -66,10 +66,15 @@
 </mat-grid-tile>
 
 </mat-grid-list>
-
+    
 <ul>
+    
     <li *ngFor="let todo of todos" [class.done]="todo.done">
-        <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
+        <mat-card class="card">
+            <mat-card-content>
+            <mat-card-title>Das ist ein To Do</mat-card-title>
+            <mat-card-subtitle>Was könnte man hier noch reinschreiben?</mat-card-subtitle>
+        <!--<input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">-->
         <table>
             <tr>
                 <td>
@@ -81,7 +86,7 @@
             </tr>
             <tr>
                 <td>
-                    Beschreibung des Medikaments: 
+                    Beschreibung: 
                 </td>
                 <td>
                     {{ todo.description }}
@@ -139,6 +144,7 @@
             <button mat-raised-button color="primary" (click)="delete(todo)">Delete To Do</button>
             <button mat-raised-button color="primary"><a mat-list-item [routerLink]="['update', todo.id]">Update</a></button>
              </table>
-              
+            </mat-card-content>
+        </mat-card>
            </li>
 </ul>
