@@ -172,9 +172,7 @@ export class TodosComponent implements OnInit {
  checkOverdue (todo : Todo) {
  
  var today = new Date();
- if(todo.consumption < today){
-    console.log("today "+today)
-    console.log("todo.consumption "+todo.consumption);
+ if(todo.consumption < today){ 
     var element = document.getElementById(todo.id)
     element?.classList.add("overdue")
   }
