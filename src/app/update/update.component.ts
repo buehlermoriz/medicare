@@ -14,6 +14,8 @@ export class UpdateComponent implements OnInit {
   constructor(private todoService: TodoService, private  activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loadStart();
+    this.todoService.getAll();
   }
    
   // async load (todo: Todo){
@@ -45,13 +47,12 @@ export class UpdateComponent implements OnInit {
           
        }
 
- async PutMethod(todo: Todo, NewDescription:string, NewMedicineName:string, check_consumption_evening:boolean,check_consumption_midday:boolean, check_consumption_morning:boolean
-  , check_consumption_monday:boolean,check_consumption_tuesday:boolean, check_consumption_wednesday:boolean, check_consumption_thirsday:boolean,check_consumption_friday:boolean, check_consumption_satturday:boolean, check_consumption_sunday:boolean
+ async PutMethod(todo: Todo, NewDescription:string, NewMedicineName:string, check_consumption_evening:boolean,check_consumption_midday:boolean, check_consumption_morning:boolean 
   ,new_consumption_day:Date){
   await this.PutMethodNewDescription(todo, NewDescription);
   await this.PutMethodNewMedicineName(todo, NewMedicineName);
   await this.PutMethodCheckTime(todo, check_consumption_evening, check_consumption_midday, check_consumption_morning);
-  await this.PutMethodCheckDays(todo, check_consumption_monday,check_consumption_tuesday, check_consumption_wednesday, check_consumption_thirsday,check_consumption_friday, check_consumption_satturday, check_consumption_sunday);
+  //await this.PutMethodCheckDays(todo, check_consumption_monday,check_consumption_tuesday, check_consumption_wednesday, check_consumption_thirsday,check_consumption_friday, check_consumption_satturday, check_consumption_sunday);
   await this.PutMethodNewConsumptionDate(todo, new_consumption_day);
 }
   
