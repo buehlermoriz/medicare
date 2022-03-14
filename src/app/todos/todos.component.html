@@ -72,28 +72,14 @@
 <ul>
     
     <li *ngFor="let todo of todos" [class.done]="todo.done">
+       
+        {{checkOverdue(todo)}}
         <mat-card class="card">
             <mat-card-content>
-            <mat-card-title>Das ist ein To Do</mat-card-title>
-            <mat-card-subtitle>Was könnte man hier noch reinschreiben?</mat-card-subtitle>
-        <!--<input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">-->
+            <mat-card-title>Name Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
+            <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
+            <input type="checkbox" [checked]="todo.done" (click)="toggleDone(todo)">
         <table>
-            <tr>
-                <td>
-                    Name Medikament: 
-                </td>
-                <td>
-                    <strong>{{ todo.medicine }}</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Beschreibung: 
-                </td>
-                <td>
-                    {{ todo.description }}
-                </td>
-            </tr>
             <tr>
                 <td>
                     Einnehmen am:

@@ -45,7 +45,7 @@ export class TodoService extends Dexie {
   add(
     medicine: string,
     description: string, 
-    consumption: Date | null,
+    consumption: Date,
     consumption_monday: boolean,
     consumption_tuesday: boolean,
     consumption_wednesday: boolean,
@@ -79,7 +79,7 @@ export class TodoService extends Dexie {
   }
 
   toggleDone(todo: Todo) {
-    todo.done = !todo.done;
+    //todo.done = !todo.done;
     return this.todos.put(todo);
   }
 

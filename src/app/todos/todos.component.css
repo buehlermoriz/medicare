@@ -1,6 +1,6 @@
 .done {
     text-decoration: line-through;
-    color: gray;
+    color: red;
 }
 .mat-checkbox{
     margin-right: 10px;

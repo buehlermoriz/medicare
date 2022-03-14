@@ -24,7 +24,6 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this.loadTodos();
     var clicked = false;
-    
 
   }
 //Datepicker----------------------------------------------------------------------------------------------------------------------------------------
@@ -107,7 +106,7 @@ export class TodosComponent implements OnInit {
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
   async add( 
     medicine: string,description: string, consumption_monday: boolean,consumption_tuesday: boolean,consumption_wednesday: boolean,consumption_thirsday: boolean,
-   consumption_friday: boolean,consumption_satturday: boolean,consumption_sunday: boolean,consumption: Date | null,consumption_morning : boolean,
+   consumption_friday: boolean,consumption_satturday: boolean,consumption_sunday: boolean,consumption: Date,consumption_morning : boolean,
    consumption_midday : boolean,consumption_evening : boolean) {
    var id =   await this.todoService.add(medicine, description, consumption, consumption_monday, consumption_tuesday, consumption_wednesday, consumption_thirsday, consumption_friday, consumption_satturday, consumption_sunday, consumption_morning, consumption_midday, consumption_evening );
     await this.loadTodos();
@@ -175,5 +174,27 @@ export class TodosComponent implements OnInit {
        
         
             }
+ checkOverdue (todo : Todo) {
  
+ var today = new Date();
+ if(todo.consumption < today){
+    console.log("today "+today)
+    console.log("todo.consumption "+todo.consumption);
+     this.todoService.toggleDone(todo);
+  }
+
+  /*
+    var today = new Date();
+    console.log("here am i 1");
+   for (var i = 0;  i < this.todos.length; i++){
+    console.log("here am i 2");
+    if(this.todos[i].consumption < today){
+    console.log("here am i 3");
+    this.todoService.toggleDone(this.todos[i]);
+     console.log("Eintrag "+ i);
+     console.log("Einnahmetag " + this.todos[i].consumption);
+     console.log("Heute " + today);
+    }
+   }*/
+ }
 }
