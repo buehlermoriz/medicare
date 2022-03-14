@@ -1,9 +1,10 @@
-.done {
-    text-decoration: line-through;
-    color: red;
-}
 .mat-checkbox{
     margin-right: 10px;
+}
+
+.overdue{
+    color: red;
+    font-weight: bold;
 }
 
 .card {

@@ -78,10 +78,7 @@ export class TodoService extends Dexie {
       consumption_evening:consumption_evening});
   }
 
-  toggleDone(todo: Todo) {
-    //todo.done = !todo.done;
-    return this.todos.put(todo);
-  }
+
 
   async sync() {
     const allTodos = await this.getAll();
@@ -89,7 +86,6 @@ export class TodoService extends Dexie {
     this.todos.bulkPut(syncedTodos!);
   }
   deleteToDo(todo :Todo) {
-    todo.done = !todo.done;
     this.todos.put(todo);
     return this.todos.delete(todo.id); 
     

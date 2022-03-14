@@ -134,11 +134,6 @@ export class TodosComponent implements OnInit {
  }
   
 
-  async toggleDone(todo: Todo) {
-    await this.todoService.toggleDone(todo);
-    await this.loadTodos();
-  }
-
   async loadTodos() {
     this.todos = await this.todoService.getAll();
     this.sortByDueDate();
@@ -180,21 +175,8 @@ export class TodosComponent implements OnInit {
  if(todo.consumption < today){
     console.log("today "+today)
     console.log("todo.consumption "+todo.consumption);
-     this.todoService.toggleDone(todo);
+    var element = document.getElementById(todo.id)
+    element?.classList.add("overdue")
   }
-
-  /*
-    var today = new Date();
-    console.log("here am i 1");
-   for (var i = 0;  i < this.todos.length; i++){
-    console.log("here am i 2");
-    if(this.todos[i].consumption < today){
-    console.log("here am i 3");
-    this.todoService.toggleDone(this.todos[i]);
-     console.log("Eintrag "+ i);
-     console.log("Einnahmetag " + this.todos[i].consumption);
-     console.log("Heute " + today);
-    }
-   }*/
  }
 }
