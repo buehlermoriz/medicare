@@ -43,6 +43,7 @@ export class UpdateComponent implements OnInit {
         await this.todoService.PutMethodCheckDays(todo, check_consumption_monday,check_consumption_tuesday, check_consumption_wednesday, check_consumption_thirsday,check_consumption_friday, check_consumption_satturday, check_consumption_sunday);
         }
         async PutMethodNewConsumptionDate(todo: Todo, new_consumption_day:Date){
+          await this.DateValidator(new_consumption_day);
           await this.todoService.PutMethodNewConsumptionDate(todo, new_consumption_day, todo.consumption);
           
        }
@@ -55,5 +56,7 @@ export class UpdateComponent implements OnInit {
   //await this.PutMethodCheckDays(todo, check_consumption_monday,check_consumption_tuesday, check_consumption_wednesday, check_consumption_thirsday,check_consumption_friday, check_consumption_satturday, check_consumption_sunday);
   await this.PutMethodNewConsumptionDate(todo, new_consumption_day);
 }
-  
+  	  DateValidator(new_consumption_day:Date){
+        var myDate = new Date();
+      };
 }
