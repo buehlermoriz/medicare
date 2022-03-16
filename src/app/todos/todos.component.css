@@ -32,6 +32,9 @@ ul {
 }
 #add{
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #AddButton{
     margin: 20px;
@@ -39,4 +42,8 @@ ul {
 
 .input-card {
     max-width: 400px;
+  }
+
+  .mat-raised-button ~ .mat-raised-button {
+    margin: 10px;
   }

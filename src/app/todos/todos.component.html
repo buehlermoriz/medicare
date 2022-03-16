@@ -53,11 +53,6 @@
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </mat-card-footer>
       </mat-card>
-    <mat-card>
-<mat-grid-list cols="2" rowHeight="50px" >
-
-</mat-grid-list>
-</mat-card>
 </div>
     
 <ul>
@@ -121,8 +116,8 @@
                     Abends
                 </td>
             </tr>
-            <button mat-raised-button color="primary" (click)="delete(todo)">Delete To Do</button>
-            <button mat-raised-button color="accent"><a mat-list-item [routerLink]="['update', todo.id]">Update</a></button>
+            <button  mat-raised-button color="primary" (click)="delete(todo)">Medikament eingenommen</button>
+            <button  mat-raised-button color="accent"><a mat-list-item [routerLink]="['update', todo.id]">Medikament anpassen</a></button>
              </table>
             </div>
             </mat-card-content>
