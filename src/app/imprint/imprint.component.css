@@ -22,14 +22,12 @@
   }
   .instadesc{
     padding-left: 50px;
-    display: flex;
-    align-content: center;
+    position: absolute;
   }
   .imprint-text{
     padding-right: 15px;
     width: 80%;
     height: 100%;
-    overflow: scroll;
   }
 
   .mat-card{
@@ -41,5 +39,5 @@
   }
 
   #imprint-list-wrapper{
-    height: 120%;
+    min-height: 500px; 
   }
