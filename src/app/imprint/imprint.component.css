@@ -7,11 +7,39 @@
     background-image: url('/assets/pictures/insta.png');
     background-size: cover;
   }
+
+  .facebook-header-image {
+    background-image: url('/assets/pictures/facebook.png');
+    background-size: cover;
+  }
+
+  .twitter-header-image {
+    background-image: url('/assets/pictures/twitter.png');
+    background-size: cover;
+  }
+  .imprint-image {
+    width: 100%;
+  }
   .instadesc{
-      padding-left: 50px;
-      padding-top: 8px;
+    padding-left: 50px;
+    display: flex;
+    align-content: center;
+  }
+  .imprint-text{
+    padding-right: 15px;
+    width: 80%;
+    height: 100%;
+    overflow: scroll;
   }
 
   .mat-card{
      font-family: "Raleway", "Helvetica Neue", sans-serif !important;
+  }
+
+  #imprint-img-wrapper{
+    border-radius: 5px;
+  }
+
+  #imprint-list-wrapper{
+    height: 120%;
   }
