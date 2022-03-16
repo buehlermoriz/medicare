@@ -176,13 +176,10 @@ async deleteVisibilty(): Promise<void> {
  if(todo.consumption < today){ 
     var element = document.getElementById(todo.id)
     element?.classList.add("overdue")
-    console.log("id " + todo.id);
     
-    console.log("hidden 1 "+ this.hidden );
     
     this.showBadge();
 
-    console.log("hidden 2 "+ this.hidden );
 
   }
  }
