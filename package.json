@@ -28,7 +28,7 @@
     "@fullcalendar/list": "^5.10.1",
     "@fullcalendar/timegrid": "^5.10.1",
     "event-utils": "^2.1.0",
-    "moment": "^2.24",
+    "moment": "^2.29.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
