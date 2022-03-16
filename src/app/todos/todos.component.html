@@ -1,9 +1,14 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 <div class="wrapper">
 
 <div class="addButton">
     <button mat-fab
     (click)="addVisibilty()" 
-    color="primary" 
+    color="accent" 
     aria-label="button neue Medizin hinzufügen"
     matTooltip="Hier klicken um eine neue Medizin hinzuzufügen"
     >
@@ -11,7 +16,7 @@
     <mat-icon>add</mat-icon>
     </button>
 </div>
-<div  id="add">
+<div class="mat-typography" id="add">
     <div id="newMedicine">
     <mat-card class="input-card">
         <mat-card-title>Hinzufügen von einem Medikament</mat-card-title>
@@ -55,7 +60,7 @@
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="splitTimeslot( 
+          <button mat-raised-button color="accent" (click)="splitTimeslot( 
             medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
             consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
             consumption_evening.checked)">Hinzufügen</button>
@@ -129,8 +134,9 @@
                     Abends
                 </td>
             </tr>
-            <button  mat-raised-button color="primary" (click)="delete(todo)">Medikament eingenommen</button>
-            <button  mat-raised-button color="accent"><a mat-list-item [routerLink]="['update', todo.id]">Medikament anpassen</a></button>
+            <div class="mat-typography"></div>
+            <button class="mat-body-1"  mat-raised-button color="accent" (click)="delete(todo)">Medikament eingenommen</button>
+            <button class="mat-body-1" mat-raised-button color="warn"><a mat-list-item [routerLink]="['update', todo.id]">Medikament anpassen</a></button>
              </table>
             </div>
             </mat-card-content>
