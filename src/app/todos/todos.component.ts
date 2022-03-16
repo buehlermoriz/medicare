@@ -3,6 +3,8 @@ import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 
@@ -152,12 +154,19 @@ export class TodosComponent implements OnInit {
 //   document.getElementsByClassName("notVisible")[0].classList.toggle("visible");
 //  }
 
- addVisibilty(): void {
-  document.getElementsByClassName("notVisible")[0].classList.remove("notVisible");
-  document.getElementById("add")?.classList.add("visible");
-  document.getElementById("AddButton")?.classList.add("notVisible");
+ async addVisibilty(): Promise<void> {
+  await document.getElementsByClassName("notVisible")[0].classList.remove("notVisible");
+  await document.getElementById("add")?.classList.add("visible");
+ await document.getElementById("AddButton")?.classList.add("notVisible");
+ await document.getElementById("AddButton")?.classList.remove("visible");
 
-  
+      }
+
+async deleteVisibilty(): Promise<void> {
+  await document.getElementsByClassName("visible")[0].classList.remove("visible");
+  await document.getElementById("add")?.classList.add("notVisible");
+  await document.getElementById("AddButton")?.classList.add("visible");
+ await document.getElementById("AddButton")?.classList.remove("notVisible");
       }
 
       remove(): void {

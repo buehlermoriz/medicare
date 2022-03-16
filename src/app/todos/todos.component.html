@@ -1,73 +1,60 @@
 <div class="wrapper">
 <button mat-raised-button color="primary"(click)="addVisibilty()" id="AddButton">  Add new Medicine</button>
 <div class="notVisible" id="add">
-    <mat-card>
+    <mat-card class="input-card">
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         <mat-card-title>Hinzufügen von einem Medikament</mat-card-title>
+        <mat-card-content>
+          <p>Bitte füllen Sie die folgenden Felder aus, um ein Medikament zu Ihrer Liste hinzuzufügen</p>
+          <mat-form-field class="input-full-width" appearance="fill">
+              <!--Name Medikament------------------------------------------------------>
+            <mat-label>Medikamentname</mat-label>
+            <input #medicine matInput placeholder="z.B. Ibuprufen" >
+          </mat-form-field>
+              <!--Beschreibung Medikament------------------------------------------------------>
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Beschreibung</mat-label>
+            <input #description matInput placeholder="z.B. blaue Dose" >
+          </mat-form-field>
+              <!--Tage--------------------------------------------------------------------->
+          <p>Einnehmen an den Tagen:</p>
+          <mat-checkbox #consumption_monday class="example-margin">Montag</mat-checkbox>
+          <mat-checkbox #consumption_tuesday class="example-margin">Dienstag</mat-checkbox>
+          <mat-checkbox #consumption_wednesday class="example-margin">Mittwoch</mat-checkbox>
+          <mat-checkbox #consumption_thirsday class="example-margin">Donnerstag</mat-checkbox>
+          <mat-checkbox #consumption_friday class="example-margin">Freitag</mat-checkbox>
+          <mat-checkbox #consumption_satturday class="example-margin">Samstag</mat-checkbox>
+          <mat-checkbox #consumption_sunday class="example-margin">Sonntag</mat-checkbox>
+          <mat-form-field appearance="fill">
+              <!--Zeitraum------------------------------------------------------------------->
+            <mat-label>Zeitraum Medikamenteinnahme</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+              <input  matStartDate formControlName="start" placeholder="Start date">
+              <input matEndDate formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+              <!--Tageszeit------------------------------------------------------------------->
+            <p>Tageszeit der Einnahme</p>
+            <mat-checkbox #consumption_morning class="example-margin">Morgens</mat-checkbox>
+            <mat-checkbox #consumption_midday class="example-margin">Mittags</mat-checkbox>
+            <mat-checkbox #consumption_evening class="example-margin">Abends</mat-checkbox>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button (click)="splitTimeslot( 
+            medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
+            consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
+            consumption_evening.checked)">Hinzufügen</button>
+          <button mat-button (click)="deleteVisibilty()">Abbrechen</button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+    <mat-card>
 <mat-grid-list cols="2" rowHeight="50px" >
-
-<!-- Inputelemente schöner gestalten!-->
-<mat-grid-tile>
-    Name Medikament: 
-</mat-grid-tile>
-<mat-grid-tile> 
-    <mat-form-field class="input-full-width" appearance="fill">
-        <mat-label>Medikament</mat-label>
-        <input #medicine matInput placeholder="z.B. Ibuprufen" >
-      </mat-form-field>
-</mat-grid-tile>     
-<mat-grid-tile>
-    Beschreibung des Medikaments: 
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-form-field class="input-full-width" appearance="fill">
-        <mat-label>Beschreibung</mat-label>
-        <input #description matInput placeholder="z.B. blaue Dose" >
-      </mat-form-field>
-</mat-grid-tile>
-<mat-grid-tile>
-    An folgenden Wochentagen einnehmen:
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-checkbox #consumption_monday class="example-margin">Montag</mat-checkbox>
-    <mat-checkbox #consumption_tuesday class="example-margin">Dienstag</mat-checkbox>
-    <mat-checkbox #consumption_wednesday class="example-margin">Mittwoch</mat-checkbox>
-    <mat-checkbox #consumption_thirsday class="example-margin">Donnerstag</mat-checkbox>
-    <mat-checkbox #consumption_friday class="example-margin">Freitag</mat-checkbox>
-    <mat-checkbox #consumption_satturday class="example-margin">Samstag</mat-checkbox>
-    <mat-checkbox #consumption_sunday class="example-margin">Sonntag</mat-checkbox>
-</mat-grid-tile>
-<mat-grid-tile>
-    Medikament einnehmen bis: 
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-form-field appearance="fill">
-        <mat-label>Enter a date range</mat-label>
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-          <input  matStartDate formControlName="start" placeholder="Start date">
-          <input matEndDate formControlName="end" placeholder="End date">
-        </mat-date-range-input>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      
-      </mat-form-field>
-
-</mat-grid-tile>
-<mat-grid-tile>
-    Häufigkeit der Einnahme:  
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-checkbox #consumption_morning class="example-margin">Morgens</mat-checkbox>
-    <mat-checkbox #consumption_midday class="example-margin">Mittags</mat-checkbox>
-    <mat-checkbox #consumption_evening class="example-margin">Abends</mat-checkbox>
-</mat-grid-tile>
-<mat-grid-tile>
-    <button mat-raised-button (click)="splitTimeslot( 
-    medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
-    consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
-    consumption_evening.checked)">Hinzufügen</button>
-<!-- <button mat-raised-button (click)="sync()">Sync</button> -->
-
-</mat-grid-tile>
 
 </mat-grid-list>
 </mat-card>

@@ -36,3 +36,7 @@ ul {
 #AddButton{
     margin: 20px;
 }
+
+.input-card {
+    max-width: 400px;
+  }

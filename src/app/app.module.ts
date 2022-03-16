@@ -31,6 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 FullCalendarModule.registerPlugins([
@@ -71,6 +73,7 @@ FullCalendarModule.registerPlugins([
     MatIconModule,
     MatCardModule,
     MatListModule,
+    MatProgressBarModule,
     MatGridListModule,
     MatInputModule,
     MatDatepickerModule,
