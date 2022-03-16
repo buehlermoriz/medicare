@@ -88,7 +88,6 @@ export class TodoService extends Dexie {
   deleteToDo(todo :Todo) {
     this.todos.put(todo);
     return this.todos.delete(todo.id); 
-    
   }
 
   async syncCalendar()  {
