@@ -17,6 +17,7 @@ import { MatTooltip } from '@angular/material/tooltip/tooltip';
 
 })
 export class TodosComponent implements OnInit {
+  hidden = true
   todos: Todo[] = [];
   selected = "1"
   range = new FormGroup({
@@ -171,9 +172,25 @@ async deleteVisibilty(): Promise<void> {
  checkOverdue (todo : Todo) {
  
  var today = new Date();
+ 
  if(todo.consumption < today){ 
     var element = document.getElementById(todo.id)
     element?.classList.add("overdue")
+    console.log("id " + todo.id);
+    
+    console.log("hidden 1 "+ this.hidden );
+    
+    this.showBadge();
+
+    console.log("hidden 2 "+ this.hidden );
+
   }
+ }
+
+ showBadge(){
+  this.hidden=false;
+ }
+ resetBadge(){
+  this.hidden=true;
  }
 }

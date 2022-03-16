@@ -1,10 +1,11 @@
+
 .mat-checkbox{
     margin-right: 10px;
 }
 
 .overdue{
-    color: red;
-    font-weight: bold;
+   color: grey;
+   font-style: italic;
 }
 
 .card {
@@ -69,4 +70,10 @@ ul {
       float: right;
       bottom: 20px;
       right: 20px;
+  }
+
+  .stretch-badge > .mat-badge-content {
+    width: auto;
+    border-radius: 13px;
+    right: unset !important;
   }

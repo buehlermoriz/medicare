@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 FullCalendarModule.registerPlugins([
@@ -84,6 +85,7 @@ FullCalendarModule.registerPlugins([
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,13 @@
 <div class="wrapper">
 
+    <p>
+        Button with a badge on the left
+        <button mat-raised-button color="primary"
+            matBadge="Medikament jetzt einnehmen!" class="stretch-badge" matBadgePosition="after" matBadgeColor="accent">
+          Action
+        </button>
+      </p>
+
 <div class="addButton">
     <button mat-fab
     (click)="addVisibilty()" 
@@ -71,10 +79,10 @@
 <ul>
     
     <li *ngFor="let todo of todos">
-       
+       {{resetBadge()}}
         {{checkOverdue(todo)}}
         
-        <mat-card class="card">
+        <mat-card class="card stretch-badge" matBadge="Medikament jetzt einnehmen!" [matBadgeHidden]="hidden"  >
             <mat-card-content>
             <mat-card-title>Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
             <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
