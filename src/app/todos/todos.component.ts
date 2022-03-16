@@ -46,12 +46,6 @@ export class TodosComponent implements OnInit {
    consumption_evening : boolean){
     
      const startDate = this.range.get("start")?.value;
-    //  var startDateFormated = (moment(startDate)).format('DD-MMM-YYYY')
-
-    //----------------------------------------------------------------------------------------------------------------------------------
-    console.log(startDate);
-    //----------------------------------------------------------------------------------------------------------------------------------
-
      var endDate = this.range.get("end")?.value;
 
      for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
@@ -102,6 +96,7 @@ export class TodosComponent implements OnInit {
     
       await this.loadTodos(); 
       this.remove();
+      this.deleteVisibilty();
       
   }
 
@@ -150,23 +145,13 @@ export class TodosComponent implements OnInit {
  
      });
  }
-//  addVisibilty(){
-//   document.getElementsByClassName("notVisible")[0].classList.toggle("visible");
-//  }
 
  async addVisibilty(): Promise<void> {
-  await document.getElementsByClassName("notVisible")[0].classList.remove("notVisible");
-  await document.getElementById("add")?.classList.add("visible");
- await document.getElementById("AddButton")?.classList.add("notVisible");
- await document.getElementById("AddButton")?.classList.remove("visible");
-
-      }
+  document.getElementById('add')!.style.display="block";
+}
 
 async deleteVisibilty(): Promise<void> {
-  await document.getElementsByClassName("visible")[0].classList.remove("visible");
-  await document.getElementById("add")?.classList.add("notVisible");
-  await document.getElementById("AddButton")?.classList.add("visible");
- await document.getElementById("AddButton")?.classList.remove("notVisible");
+  document.getElementById('add')!.style.display="none";
       }
 
       remove(): void {

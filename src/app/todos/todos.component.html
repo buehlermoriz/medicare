@@ -1,6 +1,7 @@
 <div class="wrapper">
-<button mat-raised-button color="primary"(click)="addVisibilty()" id="AddButton">  Add new Medicine</button>
-<div class="notVisible" id="add">
+<button mat-raised-button color="primary" onclick="document.getElementById('add').style.display='block';" id="AddButton">  Add new Medicine</button>
+<div  id="add">
+    <div id="newMedicine">
     <mat-card class="input-card">
         <mat-card-title>Hinzufügen von einem Medikament</mat-card-title>
         <mat-card-content>
@@ -47,12 +48,13 @@
             medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
             consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
             consumption_evening.checked)">Hinzufügen</button>
-          <button mat-button (click)="deleteVisibilty()">Abbrechen</button>
+          <button mat-button onclick="document.getElementById('add').style.display='none';">Abbrechen</button>
         </mat-card-actions>
         <mat-card-footer>
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </mat-card-footer>
       </mat-card>
+    </div>
 </div>
     
 <ul>
