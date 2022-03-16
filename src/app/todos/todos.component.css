@@ -61,3 +61,12 @@ ul {
   .mat-raised-button ~ .mat-raised-button {
     margin: 10px;
   }
+
+
+.addButton
+{
+      position:fixed;
+      float: right;
+      bottom: 20px;
+      right: 20px;
+  }

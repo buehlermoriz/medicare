@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatTooltip } from '@angular/material/tooltip/tooltip';
 
 
 
@@ -11,7 +12,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  styleUrls: ['./todos.component.css'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
@@ -44,6 +47,10 @@ export class TodosComponent implements OnInit {
    consumption_morning : boolean,
    consumption_midday : boolean,
    consumption_evening : boolean){
+    
+    //overlay wird ausgeblendet -------------------------------------------------------------------------------------------------------------------
+    this.deleteVisibilty();
+    
     
      const startDate = this.range.get("start")?.value;
      var endDate = this.range.get("end")?.value;
@@ -93,11 +100,9 @@ export class TodosComponent implements OnInit {
           )
       }
       }
-    
+    //weitere Todos werden geladen -------------------------------------------------------------------------------------------------------------------
       await this.loadTodos(); 
       this.remove();
-      this.deleteVisibilty();
-      
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------

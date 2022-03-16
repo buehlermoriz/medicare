@@ -32,7 +32,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 FullCalendarModule.registerPlugins([
@@ -83,7 +83,7 @@ FullCalendarModule.registerPlugins([
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-  
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

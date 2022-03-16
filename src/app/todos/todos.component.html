@@ -1,5 +1,16 @@
 <div class="wrapper">
-<button mat-raised-button color="primary" onclick="document.getElementById('add').style.display='block';" id="AddButton">  Add new Medicine</button>
+
+<div class="addButton">
+    <button mat-fab
+    (click)="addVisibilty()" 
+    color="primary" 
+    aria-label="button neue Medizin hinzufügen"
+    matTooltip="Hier klicken um eine neue Medizin hinzuzufügen"
+    >
+    
+    <mat-icon>add</mat-icon>
+    </button>
+</div>
 <div  id="add">
     <div id="newMedicine">
     <mat-card class="input-card">
@@ -48,7 +59,7 @@
             medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
             consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
             consumption_evening.checked)">Hinzufügen</button>
-          <button mat-button onclick="document.getElementById('add').style.display='none';">Abbrechen</button>
+          <button mat-button (click)="deleteVisibilty()">Abbrechen</button>
         </mat-card-actions>
         <mat-card-footer>
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
@@ -65,7 +76,7 @@
         
         <mat-card class="card">
             <mat-card-content>
-            <mat-card-title>Name Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
+            <mat-card-title>Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
             <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
         <div id={{todo.id}} class="test">
             <table>
@@ -106,7 +117,7 @@
             </tr> -->
             <tr>
                 <td *ngIf="todo.consumption_morning== true || todo.consumption_midday== true || todo.consumption_evening== true">
-                    Zur Uhrzeit ... einnahmen:
+                    Zur Tageszeit ... einnahmen:
                 </td>
                 <td   *ngIf="todo.consumption_morning== true">
                     Morgens
