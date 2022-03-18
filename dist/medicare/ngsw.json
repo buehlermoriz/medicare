@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1646679411578,
+  "timestamp": 1647612286577,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.10bc77e36725f144.js",
+        "/main.b85e29e66e36415b.js",
         "/manifest.webmanifest",
         "/polyfills.933eeb8bf4aae247.js",
         "/runtime.c9dfb54d1a766823.js",
-        "/styles.47aa07bb49aa6d92.css"
+        "/styles.041d6c128989c7c8.css"
       ],
       "patterns": []
     },
@@ -29,39 +29,31 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/icon-128x128.png",
-        "/assets/icons/icon-144x144.png",
-        "/assets/icons/icon-152x152.png",
-        "/assets/icons/icon-192x192.png",
-        "/assets/icons/icon-384x384.png",
-        "/assets/icons/icon-512x512.png",
-        "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png",
+        "/assets/icons/logo.svg",
+        "/assets/pictures/facebook.png",
         "/assets/pictures/insta.png",
-        "/assets/pictures/medicare_logo.png"
+        "/assets/pictures/medicare_bild.jpg",
+        "/assets/pictures/medicare_logo.svg",
+        "/assets/pictures/twitter.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/logo.svg": "73c205b2f0a7507d34ef3072e4bf233fd822a16d",
+    "/assets/pictures/facebook.png": "7b2ba5bfb77597293dbb965953b924e10d901815",
     "/assets/pictures/insta.png": "1725ba7495bb6b4f003a0fe9846ed7425338aeb3",
-    "/assets/pictures/medicare_logo.png": "5d58b412a794fa44e954868231b9e3e2bc5f8966",
+    "/assets/pictures/medicare_bild.jpg": "c0bd3f76ac4e0c0c9f13aab9479e09c7ae485082",
+    "/assets/pictures/medicare_logo.svg": "8003377db64fa4213f6ca81af1c8c02f03a4ce3b",
+    "/assets/pictures/twitter.png": "b49e115a5cbc7c6e9466d83315a1e84845494893",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "0e7544d2dfe1c3f520628bc5f85125d48bb26333",
-    "/main.10bc77e36725f144.js": "3299362b10707ce7e1379e3872aacb9b4ffea9cc",
-    "/manifest.webmanifest": "ed9d1fcf12da5df2daf662928fac684c5f08a3c8",
+    "/index.html": "6598c288746092d33ce0b7ecb9ca0a09cba04f0d",
+    "/main.b85e29e66e36415b.js": "b7ac7ba245f6970a028fdb1741bc066d4afc1283",
+    "/manifest.webmanifest": "a94b924a3fad0f3c75bdd9425d6bf93a55afc958",
     "/polyfills.933eeb8bf4aae247.js": "b08673a83b85224a2b8dc4eb9700927684b082c7",
     "/runtime.c9dfb54d1a766823.js": "8d2a092a9568a9e35127984707e07c1979eafb39",
-    "/styles.47aa07bb49aa6d92.css": "1ba58e2706e9176d0b51d8dc618e10b69e6dd377"
+    "/styles.041d6c128989c7c8.css": "37ceac0a375182fd342d44dabf32e9fb6741a0fb"
   },
   "navigationUrls": [
     {
