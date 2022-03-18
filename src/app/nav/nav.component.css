@@ -12,13 +12,13 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 30px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #F50057;
+  color: white;
 }
 
 /* Add an active class to highlight the current page */
@@ -53,4 +53,8 @@
     display: block;
     text-align: left;
   }
+}
+
+img {
+  width: 40px;
 }
