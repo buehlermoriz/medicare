@@ -91,6 +91,15 @@ ul {
     bottom: 3%;
     right: 100px;
   }
-  .svgPic{
+  .svgPic{  
     max-width: 500px;
-}
+  }
+
+  #med-adjust{
+    text-decoration: none;
+    color: #333;
+  }
+
+  #med-title{
+    color: #333;
+  }
