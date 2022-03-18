@@ -18,10 +18,13 @@ svg text {
     stroke-width: 3;
     animation: textAnimate 5s infinite alternate;
   }
-.mt{
+.mt-5{
     margin-top: 100px;
-
 }
+.mt-1{
+    margin-top: 40px;
+}
+
   @keyframes textAnimate {
     0% {
       stroke-dasharray: 0 50%;
@@ -38,11 +41,6 @@ svg text {
     max-width: 500px;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Exo:100);
-/* Cool infinite background scrolling animation. * Twitter: @kootoopas */
-/* Exo thin font from Google. */
-/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-/* Animations */
  @-webkit-keyframes bg-scrolling-reverse {
 	 100% {
 		 background-position: 50px 50px;
