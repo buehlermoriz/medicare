@@ -101,7 +101,7 @@
         <mat-card class="card stretch-badge" matBadge="Medikament jetzt einnehmen!" [matBadgeHidden]="hidden"  >
           <div class="overflowHidden">
             <mat-card-content>
-            <mat-card-title>Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
+            <mat-card-title id="med-title">Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
             <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
         <div id={{todo.id}} class="test">
             <table>
@@ -156,7 +156,7 @@
             </tr>
             <div class="mat-typography"></div>
             <button class="mat-body-1"  mat-raised-button color="accent" (click)="delete(todo)">Medikament eingenommen</button>
-            <button class="mat-body-1" mat-raised-button color="warn"><a mat-list-item [routerLink]="['update', todo.id]">Medikament anpassen</a></button>
+            <button class="mat-body-1" mat-raised-button color="warn"><a id="med-adjust" mat-list-item [routerLink]="['update', todo.id]">Medikament anpassen</a></button>
              </table>
             </div>
             </mat-card-content>
