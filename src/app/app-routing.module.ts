@@ -7,9 +7,8 @@ import { TodosComponent } from './todos/todos.component';
 import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
-  { path: 'medi', component: TodosComponent },
-  { path: 'about', component: AboutComponent },
+  { path: '', component: TodosComponent },
+  { path: 'mediCare', component: AboutComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'update/:id', component: UpdateComponent },
   { path: 'imprint', component: ImprintComponent }
