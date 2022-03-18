@@ -1,31 +1,10 @@
-.imprint-card {
-    max-width: 90%; 
-    margin: 5%; 
-    margin-bottom: 20px;
-  }
-  
-  .instagram-header-image {
-    background-image: url('/assets/pictures/insta.png');
-    background-size: cover;
-  }
-
-  .facebook-header-image {
-    background-image: url('/assets/pictures/facebook.png');
-    background-size: cover;
-  }
-
-  .twitter-header-image {
-    background-image: url('/assets/pictures/twitter.png');
-    background-size: cover;
-  }
-
   .imprint-image {
     position: relative;
     max-width: 20px;
   }
 
   .imprint-image {
-    padding-right: 50%;
+    padding-right: 70%;
   }
 
   .instadesc{
@@ -40,7 +19,12 @@
     font-family: "Raleway", "Helvetica Neue", sans-serif !important;
   }
 
-  #imprint-img-wrapper{
-   
-    position: absolute;
+  h2{
+    padding-top: 2%;
+    padding-left: 2%;
   }
+
+  h3{
+    padding-left: 2%;
+  }
+

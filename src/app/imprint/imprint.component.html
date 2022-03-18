@@ -1,10 +1,5 @@
-<mat-card class="imprint-card">
-    <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>Impressum</mat-card-title>
-      <mat-card-subtitle>Alle wichtigen Informationen zu unserem Unternehmen findest du hier.</mat-card-subtitle>
-    </mat-card-header>
-    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba the Impressumshund"> -->
+    <h2>Impressum</h2>
+    <h3>Alle wichtigen Informationen zu unserem Unternehmen findest du hier.</h3>
     <mat-card-content>
       <mat-grid-list cols="2" [cols]="breakpoint"  [rowHeight]="height" (window:resize)="onResize($event)">
         <div  id="imprint-list-wrapper">
@@ -32,19 +27,18 @@
     </mat-grid-tile>
   </div>
     </mat-grid-list>
+    <hr style=" border: 0;  height: 4px; background-color: #333;">
     <mat-grid-list cols="3" rowHeight="4:1" id="imprint-footer">
       <mat-grid-tile>  
-        <div mat-card-avatar class="instagram-header-image">
-          <p class="instadesc">Instagram: medicare</p></div>
+          <img width="40px" src="/assets/pictures/insta.png" alt="Imprint Picture">
+          <p class="instadesc">Instagram: medicare</p>
       </mat-grid-tile>
       <mat-grid-tile>  
-        <div mat-card-avatar class="facebook-header-image">
-          <p class="instadesc">Facebook: mediCare</p></div>
+        <img width="40px" src="/assets/pictures/facebook.png" alt="Imprint Picture">
+          <p class="instadesc">Facebook: mediCare</p>
       </mat-grid-tile>
       <mat-grid-tile>  
-        <div mat-card-avatar class="twitter-header-image">
-          <p class="instadesc">Twitter: medicare</p></div>
+          <img width="40px" src="/assets/pictures/twitter.png" alt="Imprint Picture">
+          <p class="instadesc">Twitter: medicare</p>
       </mat-grid-tile>
     </mat-grid-list>
-      </mat-card-content>
-  </mat-card>
