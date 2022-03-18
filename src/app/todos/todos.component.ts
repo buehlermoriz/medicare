@@ -17,7 +17,9 @@ import { MatTooltip } from '@angular/material/tooltip/tooltip';
 
 })
 export class TodosComponent implements OnInit {
-  hidden = true
+  hidden = true;
+  breakpoint: number | undefined;
+  height!: string | number;
   todos: Todo[] = [];
   selected = "1"
   range = new FormGroup({
@@ -30,7 +32,8 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this.loadTodos();
     var clicked = false;
-
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;    
+    this.height = (window.innerWidth <= 600) ? "200px" : "500px";
   }
 //Datepicker----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -203,4 +206,9 @@ async deleteVisibilty(): Promise<void> {
 
    }
  }
+
+ onResize(event: any) {
+  this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+  this.height = (event.target.innerWidth <= 600) ? "200px" : "500px";
+}
 }
