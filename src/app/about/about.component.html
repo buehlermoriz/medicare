@@ -1,5 +1,5 @@
 
-
+<div class="bg">
 <div id="wrapper">
     
 <mat-grid-list cols="1" rowHeight="210px">
@@ -26,9 +26,36 @@
     </mat-grid-tile>
   </mat-grid-list>
   <h2>Lassen Sie sich täglich ihre Anstehenden Medikamente anzeigen</h2>
-  <mat-grid-list cols="1" rowHeight="210px">
-    <mat-grid-tile>
-    </mat-grid-tile>
-</mat-grid-list>
+  <mat-card class="card stretch-badge" matBadge="Medikament jetzt einnehmen!">
+    <div class="overflowHidden">
+      <mat-card-content>
+      <mat-card-title>Medikament: <strong>Ibuprufen</strong></mat-card-title>
+      <mat-card-subtitle>Beschreibung: blaue Packung, rote Schrift</mat-card-subtitle>
+  <div class="test">
+      <table>
+      <tr>
+          <td>
+              Einnehmen am:
+          </td>
+          <td>
+              18.03.2021 bis 25.05.2021
+          </td>
+      </tr>
+      <tr>
+          <td >
+              Zur Tageszeit ... einnahmen:
+          </td>
+          <td  >
+              Morgens
+          </td>
+      </tr>
+      <div class="mat-typography"></div>
+      <button class="mat-body-1"  mat-raised-button color="accent" >Medikament eingenommen</button>
+      <button class="mat-body-1" mat-raised-button color="warn">Medikament anpassen</button>
+       </table>
+      </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </div>
-
+</div>
