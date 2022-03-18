@@ -18,7 +18,10 @@ svg text {
     stroke-width: 3;
     animation: textAnimate 5s infinite alternate;
   }
+.mt{
+    margin-top: 100px;
 
+}
   @keyframes textAnimate {
     0% {
       stroke-dasharray: 0 50%;
@@ -85,3 +88,35 @@ h2{
     text-align: center;
     margin-top: 10%;
 }
+
+.bg {
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          rgba(255, 255, 255, 0.2) 0%, 
+          rgba(238,40,59, 0.2) 25%, 
+          rgba(238,40,59, 0.2) 51%, 
+          rgba(217,214,211, 0.2) 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+  
+  @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  .card {
+    margin-top: 30px;
+    margin-left: 20%;
+    max-width: 50%;
+    background-color: #eaeaea;
+}
+
+.stretch-badge > .mat-badge-content {
+    width: auto;
+    border-radius: 13px;
+    right: unset !important;
+  }
