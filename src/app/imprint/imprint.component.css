@@ -28,3 +28,8 @@
     padding-left: 2%;
   }
 
+  a{
+    text-decoration: none;
+    color: darkcyan;
+    font-weight: 600;
+  }
