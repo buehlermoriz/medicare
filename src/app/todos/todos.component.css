@@ -14,7 +14,9 @@
     max-width: 50%;
     background-color: #eaeaea;
 }
-
+.overflowHidden{
+    overflow: hidden;
+}
 ul {
     list-style-type: none; 
     
@@ -43,7 +45,6 @@ ul {
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
-  cursor: pointer;
 }
 #AddButton{
     margin: 20px;
@@ -68,8 +69,8 @@ ul {
 {
       position:fixed;
       float: right;
-      bottom: 20px;
-      right: 20px;
+      bottom: 3%;
+      right: 2%;
   }
 
   .stretch-badge > .mat-badge-content {
@@ -87,6 +88,6 @@ ul {
     position:fixed;
     display: none;
     float: right;
-    bottom: 15px;
+    bottom: 3%;
     right: 100px;
   }
