@@ -8,7 +8,7 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 30px;
   text-decoration: none;
   font-size: 30px;
 }
@@ -27,7 +27,7 @@
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -35,7 +35,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
