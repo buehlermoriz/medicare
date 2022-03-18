@@ -18,4 +18,9 @@ export class NavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  myFunction(){
+   document.getElementById('myTopnav')!.classList.toggle("responsive");
+   
+  }
+
 }
