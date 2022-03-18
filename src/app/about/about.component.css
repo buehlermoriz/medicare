@@ -18,7 +18,10 @@ svg text {
     stroke-width: 3;
     animation: textAnimate 5s infinite alternate;
   }
+.mt{
+    margin-top: 100px;
 
+}
   @keyframes textAnimate {
     0% {
       stroke-dasharray: 0 50%;
@@ -104,4 +107,16 @@ h2{
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
   }
-  
+
+  .card {
+    margin-top: 30px;
+    margin-left: 20%;
+    max-width: 50%;
+    background-color: #eaeaea;
+}
+
+.stretch-badge > .mat-badge-content {
+    width: auto;
+    border-radius: 13px;
+    right: unset !important;
+  }
