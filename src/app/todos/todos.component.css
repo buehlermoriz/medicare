@@ -80,4 +80,13 @@ ul {
 
   #placeholder{
       display: none;
+      margin: 150px;
+  }
+
+  #placeholderBottom{
+    position:fixed;
+    display: none;
+    float: right;
+    bottom: 15px;
+    right: 100px;
   }

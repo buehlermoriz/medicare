@@ -194,9 +194,13 @@ async deleteVisibilty(): Promise<void> {
    var todos = this.todoService.getAll()   
    if((await todos).length === 0){     
   document.getElementById('placeholder')!.style.display="block";
+  document.getElementById('placeholderBottom')!.style.display="block";
+
    }
    else{
   document.getElementById('placeholder')!.style.display="none";
+  document.getElementById('placeholderBottom')!.style.display="none";
+
    }
  }
 }
