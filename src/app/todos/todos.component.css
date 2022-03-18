@@ -91,3 +91,6 @@ ul {
     bottom: 3%;
     right: 100px;
   }
+  .svgPic{
+    max-width: 500px;
+}

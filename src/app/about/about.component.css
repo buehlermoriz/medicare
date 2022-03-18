@@ -1,4 +1,87 @@
-#content-tile{
-    position: absolute;
-    left: 20px;
+.mat-grid-list{
+    margin-top: 200px;
+}
+h1{
+    font-size: 5em;
+}
+#wrapper{
+    padding: 5%;
+}
+
+
+svg text {
+    font-family: Arial;
+    letter-spacing: 10px;
+    stroke: #ee283b;
+    font-size: 14vw;
+    font-weight: 700;
+    stroke-width: 3;
+    animation: textAnimate 5s infinite alternate;
+  }
+
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset:  20%;
+      fill: #333333
+    }
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffstet: -20%;
+      fill: hsla(189, 68%, 75%,0%)
+    }
+  }
+.svgPic{
+    max-width: 500px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Cool infinite background scrolling animation. * Twitter: @kootoopas */
+/* Exo thin font from Google. */
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+ @-webkit-keyframes bg-scrolling-reverse {
+	 100% {
+		 background-position: 50px 50px;
+	}
+}
+ @-moz-keyframes bg-scrolling-reverse {
+	 100% {
+		 background-position: 50px 50px;
+	}
+}
+ @-o-keyframes bg-scrolling-reverse {
+	 100% {
+		 background-position: 50px 50px;
+	}
+}
+ @keyframes bg-scrolling-reverse {
+	 100% {
+		 background-position: 50px 50px;
+	}
+}
+ @-webkit-keyframes bg-scrolling {
+	 0% {
+		 background-position: 50px 50px;
+	}
+}
+ @-moz-keyframes bg-scrolling {
+	 0% {
+		 background-position: 50px 50px;
+	}
+}
+ @-o-keyframes bg-scrolling {
+	 0% {
+		 background-position: 50px 50px;
+	}
+}
+ @keyframes bg-scrolling {
+	 0% {
+		 background-position: 50px 50px;
+	}
+    
+}
+h2{
+    text-align: center;
+    margin-top: 10%;
 }
