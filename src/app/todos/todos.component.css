@@ -77,3 +77,7 @@ ul {
     border-radius: 13px;
     right: unset !important;
   }
+
+  #placeholder{
+      display: none;
+  }
