@@ -6,7 +6,7 @@
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba the Impressumshund"> -->
     <mat-card-content>
-      <mat-grid-list cols="2" rowHeight="5:4">
+      <mat-grid-list cols="2" [cols]="breakpoint"  [rowHeight]="height" (window:resize)="onResize($event)">
         <div  id="imprint-list-wrapper">
         <mat-grid-tile id="imprint-img-wrapper">  
           <div class="imprint-image">

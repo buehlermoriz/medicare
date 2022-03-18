@@ -44,10 +44,3 @@
    
     position: absolute;
   }
-
-
-  @media only screen and (max-width: 830px){
-    .imprint-card{
-    background-color: blue;
-    }
-  }
