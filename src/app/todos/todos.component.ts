@@ -191,19 +191,12 @@ async deleteVisibilty(): Promise<void> {
  }
 
  async togglePlaceholder(){
-   var todos = this.todoService.getAll()
-   console.log((await todos).length);
-   
-   if((await todos).length === 0){
-     console.log("Path 1");
-     
+   var todos = this.todoService.getAll()   
+   if((await todos).length === 0){     
   document.getElementById('placeholder')!.style.display="block";
    }
    else{
-    console.log("Path 2");
-
   document.getElementById('placeholder')!.style.display="none";
-
    }
  }
 }
