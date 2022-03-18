@@ -15,15 +15,18 @@ import { TodoService } from '../todo.service';
 })
 
 export class AboutComponent implements OnInit {
- 
+  breakpoint: number | undefined;
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
     this.todoService.syncCalendar();
-   
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;    
   }
   
+  onResize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+  }
   }
 
   

@@ -13,29 +13,24 @@ svg text {
     font-family: Arial;
     letter-spacing: 10px;
     stroke: #ee283b;
-    font-size: 150px;
+    font-size: 14vw;
     font-weight: 700;
     stroke-width: 3;
-   
     animation: textAnimate 5s infinite alternate;
-    
   }
-  
+
   @keyframes textAnimate {
     0% {
       stroke-dasharray: 0 50%;
       stroke-dashoffset:  20%;
       fill: #333333
-  
     }
-    
     100% {
       stroke-dasharray: 50% 0;
       stroke-dashoffstet: -20%;
       fill: hsla(189, 68%, 75%,0%)
     }
-    
   }
-  
-  
-  
+.svgPic{
+    max-width: 500px;
+}
