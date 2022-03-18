@@ -58,5 +58,16 @@ export class UpdateComponent implements OnInit {
 }
   	  DateValidator(new_consumption_day:Date){
         var myDate = new Date();
+
+    
+          var now = new Date();
+          now.setHours(0,0,0,0);
+          if (new_consumption_day < now) {
+            document.getElementById('date')!.style.color="red";
+            document.getElementById('DateInThePast')!.style.display="block";
+          } else {
+            return
+          }
+        };
       };
-}
+

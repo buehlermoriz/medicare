@@ -31,6 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 FullCalendarModule.registerPlugins([
@@ -71,6 +74,7 @@ FullCalendarModule.registerPlugins([
     MatIconModule,
     MatCardModule,
     MatListModule,
+    MatProgressBarModule,
     MatGridListModule,
     MatInputModule,
     MatDatepickerModule,
@@ -80,7 +84,8 @@ FullCalendarModule.registerPlugins([
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-  
+    MatTooltipModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

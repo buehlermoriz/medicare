@@ -88,13 +88,14 @@ export class TodoService extends Dexie {
   deleteToDo(todo :Todo) {
     this.todos.put(todo);
     return this.todos.delete(todo.id); 
-    
   }
 
   async syncCalendar()  {
     let todos =  this.getAll();
+    let i: number = INITIAL_EVENTS.length
+    let y: number = (await todos).length
   
-    if(INITIAL_EVENTS.length != (await todos).length){
+    if(i !== y){
       for(let todo of await todos){
         var DateFormated = (moment(todo.consumption)).format('YYYY-MM-DD')
         INITIAL_EVENTS.push(

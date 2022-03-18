@@ -6,7 +6,52 @@
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba the Impressumshund"> -->
     <mat-card-content>
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <div  id="imprint-list-wrapper">
+        <mat-grid-tile id="imprint-img-wrapper">  
+          <div class="imprint-image">
+          <img src="/assets/pictures/medicare_bild.jpg" alt="Imprint Picture">
+           </div>
+       </mat-grid-tile>
+       <mat-grid-tile>  
+        <div class="imprint-text">
+        <p>Herausgeber</p>
+
+        <p>MediCare GmbH</p>
+        <p>Lohrtalweg 14</p>
+        <p>DE-74234 Mosbach</p>
+        
+        <p>Telefon: +49 23-3341</p>
+        <p>Fax: +49 7944 23-2322</p>
+        <p>E-Mail: info@medicare.de</p>
+        
+        <p>Sitz Mosbach</p>
+        <p>HRB 738108 Stuttgart</p>
+        
+        <p>Umsatzsteueridentifikationsnummer: DE2323 212 2</p>
+        
+        <p>Geschäftsführer: Moriz Bühler</p>
+        
+        <p>Plattform der EU-Kommission</p>
+        <p>zur Online-Streitbeilegung:</p>
+        <p>www.ec.europa.eu/consumers/odr</p>
+      </div>
+    </mat-grid-tile>
+  </div>
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile>  
         <div mat-card-avatar class="instagram-header-image">
-        <p class="instadesc">medicare</p></div>
-    </mat-card-content>
+          <p class="instadesc">Instagram: medicare</p></div>
+      </mat-grid-tile>
+      <mat-grid-tile>  
+        <div mat-card-avatar class="facebook-header-image">
+          <p class="instadesc">Facebook: mediCare</p></div>
+      </mat-grid-tile>
+      <mat-grid-tile>  
+        <div mat-card-avatar class="twitter-header-image">
+          <p class="instadesc">Twitter: medicare</p></div>
+      </mat-grid-tile>
+    </mat-grid-list>
+      </mat-card-content>
   </mat-card>

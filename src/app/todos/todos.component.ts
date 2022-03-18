@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatTooltip } from '@angular/material/tooltip/tooltip';
+
 
 
 
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  styleUrls: ['./todos.component.css'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class TodosComponent implements OnInit {
+  hidden = true;
+  breakpoint: number | undefined;
+  height!: string | number;
   todos: Todo[] = [];
   selected = "1"
   range = new FormGroup({
@@ -24,7 +32,8 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this.loadTodos();
     var clicked = false;
-
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;    
+    this.height = (window.innerWidth <= 600) ? "200px" : "500px";
   }
 //Datepicker----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,13 +52,11 @@ export class TodosComponent implements OnInit {
    consumption_midday : boolean,
    consumption_evening : boolean){
     
+    //overlay wird ausgeblendet -------------------------------------------------------------------------------------------------------------------
+    this.deleteVisibilty();
+    
+    
      const startDate = this.range.get("start")?.value;
-    //  var startDateFormated = (moment(startDate)).format('DD-MMM-YYYY')
-
-    //----------------------------------------------------------------------------------------------------------------------------------
-    console.log(startDate);
-    //----------------------------------------------------------------------------------------------------------------------------------
-
      var endDate = this.range.get("end")?.value;
 
      for(var day = new Date(startDate) ; day <= endDate; day.setDate(day.getDate() +1)){
@@ -97,10 +104,9 @@ export class TodosComponent implements OnInit {
           )
       }
       }
-    
+    //weitere Todos werden geladen -------------------------------------------------------------------------------------------------------------------
       await this.loadTodos(); 
-      this.remove();
-      
+     this.remove();
   }
 
     //Hinzufügen von Einträgen ---------------------------------------------------------------------------------------------------------------------
@@ -121,17 +127,14 @@ export class TodosComponent implements OnInit {
    async delete(todo: Todo)  {
      console.log("delete");
     await this.todoService.deleteToDo(todo);
+    await this.loadTodos();
      
   }
   async loadTheOne(todo: Todo){
     await this.todoService.getToDo(todo);
   }
 
-  async test()  {
-    console.log("test");
-   
-    
- }
+  
   
 
   async loadTodos() {
@@ -139,6 +142,8 @@ export class TodosComponent implements OnInit {
     this.sortByDueDate();
     // Elemente werden in den Kalender geladen 
     this.todoService.syncCalendar();
+    //Check ob, ein Platzhaltertext angezeigt wird, weil keine Medikamente eingetragen sind
+    this.togglePlaceholder();
    
   }
  
@@ -148,16 +153,13 @@ export class TodosComponent implements OnInit {
  
      });
  }
-//  addVisibilty(){
-//   document.getElementsByClassName("notVisible")[0].classList.toggle("visible");
-//  }
 
- addVisibilty(): void {
-  document.getElementsByClassName("notVisible")[0].classList.remove("notVisible");
-  document.getElementById("add")?.classList.add("visible");
-  document.getElementById("AddButton")?.classList.add("notVisible");
+ async addVisibilty(): Promise<void> {
+  document.getElementById('add')!.style.display="block";
+}
 
-  
+async deleteVisibilty(): Promise<void> {
+  document.getElementById('add')!.style.display="none";
       }
 
       remove(): void {
@@ -172,9 +174,41 @@ export class TodosComponent implements OnInit {
  checkOverdue (todo : Todo) {
  
  var today = new Date();
+ 
  if(todo.consumption < today){ 
     var element = document.getElementById(todo.id)
     element?.classList.add("overdue")
+    
+    
+    this.showBadge();
+
+
   }
  }
+
+ showBadge(){
+  this.hidden=false;
+ }
+ resetBadge(){
+  this.hidden=true;
+ }
+
+ async togglePlaceholder(){
+   var todos = this.todoService.getAll()   
+   if((await todos).length === 0){     
+  document.getElementById('placeholder')!.style.display="block";
+  document.getElementById('placeholderBottom')!.style.display="block";
+
+   }
+   else{
+  document.getElementById('placeholder')!.style.display="none";
+  document.getElementById('placeholderBottom')!.style.display="none";
+
+   }
+ }
+
+ onResize(event: any) {
+  this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+  this.height = (event.target.innerWidth <= 600) ? "200px" : "500px";
+}
 }

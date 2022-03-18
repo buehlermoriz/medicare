@@ -1,34 +1,54 @@
-.sidenav-container {
-  height: 100%;
+.topnav {
+  background-color: #333;
+  overflow: hidden;
 }
 
-.sidenav {
-  width: 200px;
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 30px;
 }
 
-.sidenav .mat-toolbar {
-  background: inherit;
+.topnav a:hover {
+  background-color: #F50057;
+  color: white;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
 }
 
-.navbar {
-  justify-content:right;
+.topnav .icon {
+  display: none;
 }
 
-span {
-  padding-right: 5rem;
-  cursor: pointer;
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 img {
-width: 60px; 
-position: absolute;
-top: 0px;
-left: 20px;
+  width: 40px;
 }
-

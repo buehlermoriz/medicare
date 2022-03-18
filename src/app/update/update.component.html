@@ -46,10 +46,10 @@
                 Medikament einnehmen bis: 
             </mat-grid-tile>
             <mat-grid-tile>
-                
-                <input value="{{ todo.consumption }}" required type="date" #consumption_day>
-            </mat-grid-tile>
-            <mat-grid-tile>
+              <input  id="date" style="color:black" value="{{ todo.consumption }}" required type="date" #consumption_day>
+               </mat-grid-tile>
+               <mat-grid-tile id="DateInThePast" style="display:none;color:red">Nimm dir einen Termin der heute ist oder in der Zukunft liegt</mat-grid-tile>
+                <mat-grid-tile>
                 Häufigkeit der Einnahme:  
             </mat-grid-tile>
             <mat-grid-tile>
