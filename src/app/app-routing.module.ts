@@ -7,7 +7,7 @@ import { TodosComponent } from './todos/todos.component';
 import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
-  { path: '', component: TodosComponent },
+  { path: '', component: AboutComponent },
   { path: 'about', component: AboutComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'update/:id', component: UpdateComponent },
