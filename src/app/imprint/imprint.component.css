@@ -1,6 +1,7 @@
 .imprint-card {
-      max-width: 90%; 
-      margin: 50px; 
+    max-width: 90%; 
+    margin: 5%; 
+    margin-bottom: 20px;
   }
   
   .instagram-header-image {
@@ -17,27 +18,36 @@
     background-image: url('/assets/pictures/twitter.png');
     background-size: cover;
   }
+
   .imprint-image {
-    width: 100%;
+    position: relative;
+    max-width: 20px;
   }
+
+  .imprint-image {
+    padding-right: 50%;
+  }
+
   .instadesc{
     padding-left: 50px;
-    position: absolute;
   }
+  
   .imprint-text{
-    padding-right: 15px;
     width: 80%;
-    height: 100%;
   }
 
   .mat-card{
-     font-family: "Raleway", "Helvetica Neue", sans-serif !important;
+    font-family: "Raleway", "Helvetica Neue", sans-serif !important;
   }
 
   #imprint-img-wrapper{
-    border-radius: 5px;
+   
+    position: absolute;
   }
 
-  #imprint-list-wrapper{
-    min-height: 500px; 
+
+  @media only screen and (max-width: 830px){
+    .imprint-card{
+    background-color: blue;
+    }
   }
