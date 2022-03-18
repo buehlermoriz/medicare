@@ -28,6 +28,11 @@
     padding-left: 2%;
   }
 
+  h4{
+    font-weight: bold;
+    font-size: larger;
+  }
+
   a{
     text-decoration: none;
     color: darkcyan;
