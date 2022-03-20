@@ -81,7 +81,7 @@ ul {
 
   #placeholder{
       display: none;
-      margin: 150px;
+      margin: 10%;
   }
 
   #placeholderBottom{
@@ -92,7 +92,8 @@ ul {
     right: 100px;
   }
   .svgPic{  
-    max-width: 500px;
+    max-width: 90%;
+    max-height: 100%;
   }
 
   #med-adjust{

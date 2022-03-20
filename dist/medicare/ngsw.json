@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1647612286577,
+  "timestamp": 1647785659131,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.b85e29e66e36415b.js",
+        "/main.3409553cbc3c20ee.js",
         "/manifest.webmanifest",
         "/polyfills.933eeb8bf4aae247.js",
         "/runtime.c9dfb54d1a766823.js",
@@ -31,8 +31,9 @@
       "urls": [
         "/assets/icons/logo.svg",
         "/assets/pictures/facebook.png",
+        "/assets/pictures/imprint-bild.png",
         "/assets/pictures/insta.png",
-        "/assets/pictures/medicare_bild.jpg",
+        "/assets/pictures/medicare.svg",
         "/assets/pictures/medicare_logo.svg",
         "/assets/pictures/twitter.png"
       ],
@@ -41,16 +42,17 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/icons/logo.svg": "73c205b2f0a7507d34ef3072e4bf233fd822a16d",
+    "/assets/icons/logo.svg": "aa5223be5ccc4e97dd10394a89b1b7f8ba1eed72",
     "/assets/pictures/facebook.png": "7b2ba5bfb77597293dbb965953b924e10d901815",
-    "/assets/pictures/insta.png": "1725ba7495bb6b4f003a0fe9846ed7425338aeb3",
-    "/assets/pictures/medicare_bild.jpg": "c0bd3f76ac4e0c0c9f13aab9479e09c7ae485082",
+    "/assets/pictures/imprint-bild.png": "c6901feddb5d8d86d791200f2c90e68efdc88201",
+    "/assets/pictures/insta.png": "5ac910c62f59c98e365406afc1dd7e6690f1a60a",
+    "/assets/pictures/medicare.svg": "20021af8d10b1bdca6c61bc46a0ca0c5ee743c8e",
     "/assets/pictures/medicare_logo.svg": "8003377db64fa4213f6ca81af1c8c02f03a4ce3b",
     "/assets/pictures/twitter.png": "b49e115a5cbc7c6e9466d83315a1e84845494893",
-    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "6598c288746092d33ce0b7ecb9ca0a09cba04f0d",
-    "/main.b85e29e66e36415b.js": "b7ac7ba245f6970a028fdb1741bc066d4afc1283",
-    "/manifest.webmanifest": "a94b924a3fad0f3c75bdd9425d6bf93a55afc958",
+    "/favicon.ico": "5e03c3d88890b87c2f3866204cbd38f248b987c8",
+    "/index.html": "4bb5b5d29e832965085b29b28181bd0439bda905",
+    "/main.3409553cbc3c20ee.js": "44677b271d27302be518433aa23ecaebcc47d138",
+    "/manifest.webmanifest": "cc9c9ccc45da1d5ab4b71b287668ed41e44dfc08",
     "/polyfills.933eeb8bf4aae247.js": "b08673a83b85224a2b8dc4eb9700927684b082c7",
     "/runtime.c9dfb54d1a766823.js": "8d2a092a9568a9e35127984707e07c1979eafb39",
     "/styles.041d6c128989c7c8.css": "37ceac0a375182fd342d44dabf32e9fb6741a0fb"
