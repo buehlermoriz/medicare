@@ -5,6 +5,7 @@ import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular
 import { BrowserModule } from '@angular/platform-browser';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatTooltip } from '@angular/material/tooltip/tooltip';
+import * as moment from 'moment';
 
 
 
@@ -219,5 +220,9 @@ async deleteVisibilty(): Promise<void> {
     document.getElementById('placeholderBottom')!.style.display="block";
 
   }
+}
+formatDate(date: Date){
+  var DateFormated = (moment(date)).format('DD-MM-YYYY')
+return DateFormated
 }
 }

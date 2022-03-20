@@ -108,14 +108,18 @@
                 <td>
                     Einnehmen am:
                 </td>
+              </tr>
+              <tr>
                 <td>
-                    {{ todo.consumption }}
+                    {{ formatDate(todo.consumption) }}
                 </td>
             </tr>
             <tr>
                 <td *ngIf="todo.consumption_morning== true || todo.consumption_midday== true || todo.consumption_evening== true">
                     Zur Tageszeit ... einnahmen:
                 </td>
+              </tr>
+              <tr>
                 <td   *ngIf="todo.consumption_morning== true">
                     Morgens
                 </td>
