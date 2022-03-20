@@ -6,6 +6,7 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "description": "Innovative App zur Verwaltung von Medikamenten.",
   "icons": [
     {
       "src": "./assets/icons/android-chrome-512x512.png",
