@@ -9,13 +9,8 @@
   "description": "Innovative App zur Verwaltung von Medikamenten.",
   "icons": [
     {
-      "src": "./assets/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "assets/icons/logo_16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     },
     {
@@ -24,14 +19,51 @@
       "type": "image/png"
     },
     {
-      "src": "assets/icons/favicon-16x16.png",
-      "sizes": "16x16",
+      "src": "assets/icons/logo_72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/logo_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/logo_128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/logo_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/logo_152x152.png",
+      "sizes": "152x152",
       "type": "image/png"
     },
     {
       "src": "assets/icons/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/logo_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/logo_384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/logo_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
+   
+    
   ]
 }
