@@ -197,7 +197,9 @@ async deleteVisibilty(): Promise<void> {
    var todos = this.todoService.getAll()   
    if((await todos).length === 0){     
   document.getElementById('placeholder')!.style.display="block";
-  document.getElementById('placeholderBottom')!.style.display="block";
+  if(window.innerWidth > 500){
+    document.getElementById('placeholderBottom')!.style.display="block";
+  }
 
    }
    else{
@@ -210,5 +212,12 @@ async deleteVisibilty(): Promise<void> {
  onResize(event: any) {
   this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
   this.height = (event.target.innerWidth <= 600) ? "200px" : "500px";
+  if(window.innerWidth <= 500){
+    document.getElementById('placeholderBottom')!.style.display="none";
+  }
+  else{
+    document.getElementById('placeholderBottom')!.style.display="block";
+
+  }
 }
 }
