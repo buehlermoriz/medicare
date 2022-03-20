@@ -71,6 +71,7 @@ ul {
       float: right;
       bottom: 3%;
       right: 2%;
+      z-index: 5;
   }
 
   .stretch-badge > .mat-badge-content {
