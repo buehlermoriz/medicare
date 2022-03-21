@@ -223,6 +223,8 @@ export class TodosComponent implements OnInit {
       consumption_evening
     );
     await this.loadTodos();
+    //Behebt Bug, dass Elemente mehrfache in den Kalender geladen werden -----------------------------------------------------------------------------
+   window.location.reload();
   }
 
   async sync() {
