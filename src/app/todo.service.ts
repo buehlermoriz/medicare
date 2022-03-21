@@ -78,8 +78,10 @@ export class TodoService extends Dexie {
     this.todos.bulkPut(syncedTodos!);
   }
   deleteToDo(todo: Todo) {
-    this.todos.put(todo);
+    // this.todos.put(todo);
+    window.location.reload();
     return this.todos.delete(todo.id);
+
   }
 
   async syncCalendar() {
