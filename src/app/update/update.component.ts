@@ -84,7 +84,9 @@ export class UpdateComponent implements OnInit {
       check_consumption_morning
     );
     await this.PutMethodNewConsumptionDate(todo, new_consumption_day);
-  }
+    await this.todoService.syncCalendar();
+    
+      }
   DateValidator(new_consumption_day: Date) {
     var now = new Date();
     now.setHours(0, 0, 0, 0);
@@ -92,12 +94,17 @@ export class UpdateComponent implements OnInit {
       document.getElementById("date")!.style.color = "red";
       document.getElementById("DateInThePast")!.style.display = "block";
     } else {
-      document.getElementById("DateInThePast")!.innerHTML = "Gespeichert";
-      document.getElementById("DateInThePast")!.style.color = "black";
-      document.getElementById("date")!.style.color = "black";
-      document.getElementById("DateInThePast")!.style.textAlign = "center";
-      document.getElementById("DateInThePast")!.style.display = "block";
+    window.location.reload();
+    this.todoService.syncCalendar();
+    this.reload();
       return;
     }
+  }
+  reload(){
+    document.getElementById("DateInThePast")!.innerHTML = "Gespeichert";
+    document.getElementById("DateInThePast")!.style.color = "black";
+    document.getElementById("date")!.style.color = "black";
+    document.getElementById("DateInThePast")!.style.textAlign = "center";
+    document.getElementById("DateInThePast")!.style.display = "block";
   }
 }
