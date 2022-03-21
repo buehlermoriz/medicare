@@ -55,10 +55,7 @@ export class UpdateComponent implements OnInit {
   await this.PutMethodCheckTime(todo, check_consumption_evening, check_consumption_midday, check_consumption_morning);
   //await this.PutMethodCheckDays(todo, check_consumption_monday,check_consumption_tuesday, check_consumption_wednesday, check_consumption_thirsday,check_consumption_friday, check_consumption_satturday, check_consumption_sunday);
   await this.PutMethodNewConsumptionDate(todo, new_consumption_day);
-  document.getElementById('DateInThePast')!.innerHTML = "Gespeichert";
-  document.getElementById('DateInThePast')!.style.color="black";
-  document.getElementById('DateInThePast')!.style.textAlign="center";
-  document.getElementById('DateInThePast')!.style.display="block";
+ 
   
 }
   	  DateValidator(new_consumption_day:Date){
@@ -71,8 +68,11 @@ export class UpdateComponent implements OnInit {
             document.getElementById('date')!.style.color="red";
             document.getElementById('DateInThePast')!.style.display="block";
           } else {
+            document.getElementById('DateInThePast')!.innerHTML = "Gespeichert";
+            document.getElementById('DateInThePast')!.style.color="black";
             document.getElementById('date')!.style.color="black";
-            document.getElementById('DateInThePast')!.style.display="none";
+            document.getElementById('DateInThePast')!.style.textAlign="center";
+            document.getElementById('DateInThePast')!.style.display="block";
             return
           }
         };
