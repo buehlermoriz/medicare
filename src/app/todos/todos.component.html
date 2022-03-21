@@ -43,7 +43,7 @@
           <mat-checkbox #consumption_monday class="example-margin">Montag</mat-checkbox>
           <mat-checkbox #consumption_tuesday class="example-margin">Dienstag</mat-checkbox>
           <mat-checkbox #consumption_wednesday class="example-margin">Mittwoch</mat-checkbox>
-          <mat-checkbox #consumption_thirsday class="example-margin">Donnerstag</mat-checkbox>
+          <mat-checkbox #consumption_thursday class="example-margin">Donnerstag</mat-checkbox>
           <mat-checkbox #consumption_friday class="example-margin">Freitag</mat-checkbox>
           <mat-checkbox #consumption_satturday class="example-margin">Samstag</mat-checkbox>
           <mat-checkbox #consumption_sunday class="example-margin">Sonntag</mat-checkbox>
@@ -67,7 +67,7 @@
         <mat-divider inset></mat-divider>
         <mat-card-actions>
           <button mat-raised-button color="accent" (click)="splitTimeslot( 
-            medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thirsday.checked,
+            medicine.value, description.value, consumption_monday.checked, consumption_tuesday.checked,consumption_wednesday.checked,consumption_thursday.checked,
             consumption_friday.checked, consumption_satturday.checked,consumption_sunday.checked,consumption_morning.checked,consumption_midday.checked,
             consumption_evening.checked)">Hinzufügen</button>
           <button mat-button (click)="deleteVisibilty()">Abbrechen</button>
