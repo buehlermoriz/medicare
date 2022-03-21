@@ -13,7 +13,9 @@ export class CalendarComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.todoService.syncCalendar();    
+    this.todoService.syncCalendar(); 
+    this.toggleVisible();
+
   }
 
   calendarOptions: CalendarOptions = {
@@ -26,9 +28,14 @@ export class CalendarComponent implements OnInit {
     dayMaxEvents: true,
     initialEvents: INITIAL_EVENTS,   
   };
-  // toggleVisible(){
-
-  // }
+  toggleVisible(){
+if(window.innerWidth <= 600){
+  document.getElementById('tipp')!.style.display="block";
+}
+else{
+  document.getElementById('tipp')!.style.display="none";
+}
+  }
 }
 
 
