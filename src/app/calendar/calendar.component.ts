@@ -9,26 +9,26 @@ import { TodoService, INITIAL_EVENTS } from '../todo.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-   
   constructor(private todoService: TodoService) {
   }
   
   ngOnInit(): void {
-    this.todoService.syncCalendar();
-    
+    this.todoService.syncCalendar();    
   }
 
   calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
+    initialView: (window.innerWidth <= 600) ?'dayGridWeek' : 'dayGridMonth' ,
+    handleWindowResize: true,
     weekends: true,
-    editable: true,
+    editable: false,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
     initialEvents: INITIAL_EVENTS,   
   };
-  
- 
+  // toggleVisible(){
+
+  // }
 }
 
 
