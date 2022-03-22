@@ -9,6 +9,7 @@ import { TodoService } from '../todo.service';
 
 export class AboutComponent implements OnInit {
   breakpoint: number | undefined;
+  
 
   constructor(private todoService: TodoService) { }
 
@@ -19,15 +20,18 @@ export class AboutComponent implements OnInit {
   
   onResize(event: any) {
     if (window.innerWidth <= 600) {
+      this.breakpoint = 1;
       document.getElementById("animatedTitle")!.style.display = "none";
       document.getElementById("mobileTitle")!.style.display = "block";
 
-    }else if (window.innerWidth >= 1400) {
+    }else if (window.innerWidth >= 1500) {
+      this.breakpoint = 2;
       document.getElementById("animatedTitle")!.style.display = "none";
       document.getElementById("mobileTitle")!.style.display = "block";
 
     }
      else {
+      this.breakpoint = 2;
       document.getElementById("mobileTitle")!.style.display = "none";
       document.getElementById("animatedTitle")!.style.display = "block";
     }

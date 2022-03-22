@@ -6,6 +6,9 @@
   .imprint-image {
     padding-right: 70%;
   }
+  .spacer{
+height: 1.5%;
+  }
 
   .instadesc{
     padding-left: 20px;
@@ -38,3 +41,6 @@
     color: darkcyan;
     font-weight: 600;
   }
+img{
+  max-height: 100%;
+}

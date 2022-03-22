@@ -129,3 +129,7 @@ h2{
   #animatedTitle{
     display: none;
   }
+  .svgPic{  
+    max-width: 110%;
+    max-height: 100%;
+  }
