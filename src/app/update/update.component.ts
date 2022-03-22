@@ -22,7 +22,6 @@ export class UpdateComponent implements OnInit {
   }
 
   async loadStart() {
-    console.log("loaded");
     this.todo = (await this.todoService.getAll()).find(
       (t) => t.id === this.activatedRoute.snapshot.params["id"]
     );

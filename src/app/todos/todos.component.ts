@@ -228,7 +228,6 @@ export class TodosComponent implements OnInit {
   }
 
   async delete(todo: Medicine) {
-    console.log("delete");
     await this.todoService.deleteToDo(todo);
     await this.loadTodos();
   }

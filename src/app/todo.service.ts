@@ -31,7 +31,6 @@ export class TodoService extends Dexie {
   }
 
   getToDo(todo: Medicine) {
-    console.log(this.todos.get(todo.id));
     return this.todos.get(todo.id);
   }
 
@@ -109,7 +108,6 @@ export class TodoService extends Dexie {
     description: string
   ) {
     description = NewDescription;
-    console.log(description + "neue beschreibuung");
     return this.todos.update(todo, { description });
   }
   async PutMethodNewMedicineName(
@@ -118,7 +116,6 @@ export class TodoService extends Dexie {
     medicine: string
   ) {
     medicine = NewMedicineName;
-    console.log(medicine + "neue Medizinname");
     return this.todos.update(todo, { medicine });
   }
   async PutMethodCheckTime(
@@ -139,7 +136,6 @@ export class TodoService extends Dexie {
     consumption: Date | null
   ) {
     consumption = new_consumption_day;
-    console.log(consumption + "neuer Tag zum Einnehmen");
     return this.todos.update(todo, { consumption });
   }
 }
