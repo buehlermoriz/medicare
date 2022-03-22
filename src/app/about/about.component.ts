@@ -14,11 +14,23 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoService.syncCalendar();
-    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;    
+    this.onResize(window);
   }
   
   onResize(event: any) {
-    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+    if (window.innerWidth <= 600) {
+      document.getElementById("animatedTitle")!.style.display = "none";
+      document.getElementById("mobileTitle")!.style.display = "block";
+
+    }else if (window.innerWidth >= 1400) {
+      document.getElementById("animatedTitle")!.style.display = "none";
+      document.getElementById("mobileTitle")!.style.display = "block";
+
+    }
+     else {
+      document.getElementById("mobileTitle")!.style.display = "none";
+      document.getElementById("animatedTitle")!.style.display = "block";
+    }
   }
   }
 
