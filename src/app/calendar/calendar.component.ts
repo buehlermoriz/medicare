@@ -19,6 +19,11 @@ export class CalendarComponent implements OnInit {
   }
 
   calendarOptions: CalendarOptions = {
+    headerToolbar: {
+      left: 'title',
+      center: '',
+      right:  (window.innerWidth <= 600) ?'prev,next' : 'prev,next today'
+    },
     initialView: (window.innerWidth <= 600) ?'dayGridWeek' : 'dayGridMonth' ,
     handleWindowResize: true,
     weekends: true,
@@ -27,6 +32,7 @@ export class CalendarComponent implements OnInit {
     selectMirror: true,
     dayMaxEvents: true,
     initialEvents: INITIAL_EVENTS,   
+    
   };
   toggleVisible(){
 if(window.innerWidth <= 600){
