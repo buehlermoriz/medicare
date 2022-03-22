@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 
-/*export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}*/
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',

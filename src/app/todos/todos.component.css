@@ -23,8 +23,6 @@ ul {
    
 }
 .notVisible{
-
-    /* visibility: hidden; */
     visibility: collapse;
     height: 0px;
     width: 0px;
@@ -34,8 +32,8 @@ ul {
 
 }
 #add{
-    padding: 20px;
-    position: fixed;
+  padding: 20px;
+  position: fixed;
   display: none;
   max-width: 100%;
   height: 100%;
@@ -51,57 +49,57 @@ ul {
 }
 
 #newMedicine{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-card {
-    max-width: 400px;
-  }
+  max-width: 400px;
+}
 
-  .mat-raised-button ~ .mat-raised-button {
-    margin: 10px;
-  }
+.mat-raised-button ~ .mat-raised-button {
+  margin: 10px;
+}
 
 
 .addButton
 {
-      position:fixed;
-      float: right;
-      bottom: 3%;
-      right: 2%;
-      z-index: 5;
-  }
+  position:fixed;
+  float: right;
+  bottom: 3%;
+  right: 2%;
+  z-index: 5;
+}
 
-  .stretch-badge > .mat-badge-content {
-    width: auto;
-    border-radius: 13px;
-    right: unset !important;
-  }
+.stretch-badge > .mat-badge-content {
+  width: auto;
+  border-radius: 13px;
+  right: unset !important;
+}
 
-  #placeholder{
-      display: none;
-      margin: 10%;
-  }
+#placeholder{
+  display: none;
+  margin: 10%;
+}
 
-  #placeholderBottom{
-    position:fixed;
-    display: none;
-    float: right;
-    bottom: 3%;
-    right: 100px;
-  }
-  .svgPic{  
-    max-width: 90%;
-    max-height: 100%;
-  }
+#placeholderBottom{
+  position:fixed;
+  display: none;
+  float: right;
+  bottom: 3%;
+  right: 100px;
+}
+.svgPic{  
+  max-width: 90%;
+  max-height: 100%;
+}
 
-  #med-adjust{
-    text-decoration: none;
-    color: #333;
-  }
+#med-adjust{
+  text-decoration: none;
+  color: #333;
+}
 
-  #med-title{
-    color: #333;
-  }
+#med-title{
+  color: #333;
+}

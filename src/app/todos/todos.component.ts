@@ -4,12 +4,7 @@ import { TodoService } from "../todo.service";
 import {
   FormGroup,
   FormControl,
-  FormsModule,
-  ReactiveFormsModule,
 } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { MatTooltip } from "@angular/material/tooltip/tooltip";
 import * as moment from "moment";
 
 @Component({
