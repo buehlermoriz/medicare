@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CalendarOptions } from '@fullcalendar/angular';
-import { TodoService, INITIAL_EVENTS } from '../todo.service';
+import { MedicineService, INITIAL_EVENTS } from '../medicine.service';
 
 
 @Component({
@@ -9,11 +9,11 @@ import { TodoService, INITIAL_EVENTS } from '../todo.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  constructor(private todoService: TodoService) {
+  constructor(private medicineService: MedicineService) {
   }
   
   ngOnInit(): void {
-    this.todoService.syncCalendar(); 
+    this.medicineService.syncCalendar(); 
     this.toggleVisible();
 
   }

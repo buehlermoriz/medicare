@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Medicine } from "../medicine";
-import { TodoService } from "../todo.service";
+import { MedicineService } from "../medicine.service";
 
 @Component({
   selector: "app-update",
@@ -12,31 +12,31 @@ export class UpdateComponent implements OnInit {
   todo?: Medicine;
 
   constructor(
-    private todoService: TodoService,
+    private medicineService: MedicineService,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.loadStart();
-    this.todoService.getAll();
+    this.medicineService.getAll();
   }
 
   async loadStart() {
     console.log("loaded");
-    this.todo = (await this.todoService.getAll()).find(
+    this.todo = (await this.medicineService.getAll()).find(
       (t) => t.id === this.activatedRoute.snapshot.params["id"]
     );
   }
 
   async PutMethodNewDescription(todo: Medicine, NewDescription: string) {
-    await this.todoService.PutMethodDescription(
+    await this.medicineService.PutMethodDescription(
       todo,
       NewDescription,
       todo.description
     );
   }
   async PutMethodNewMedicineName(todo: Medicine, NewMedicineName: string) {
-    await this.todoService.PutMethodNewMedicineName(
+    await this.medicineService.PutMethodNewMedicineName(
       todo,
       NewMedicineName,
       todo.medicine
@@ -49,7 +49,7 @@ export class UpdateComponent implements OnInit {
     check_consumption_midday: boolean,
     check_consumption_morning: boolean
   ) {
-    await this.todoService.PutMethodCheckTime(
+    await this.medicineService.PutMethodCheckTime(
       todo,
       check_consumption_evening,
       check_consumption_midday,
@@ -59,7 +59,7 @@ export class UpdateComponent implements OnInit {
 
   async PutMethodNewConsumptionDate(todo: Medicine, new_consumption_day: Date) {
     await this.DateValidator(new_consumption_day);
-    await this.todoService.PutMethodNewConsumptionDate(
+    await this.medicineService.PutMethodNewConsumptionDate(
       todo,
       new_consumption_day,
       todo.consumption
@@ -84,7 +84,7 @@ export class UpdateComponent implements OnInit {
       check_consumption_morning
     );
     await this.PutMethodNewConsumptionDate(todo, new_consumption_day);
-    await this.todoService.syncCalendar();
+    await this.medicineService.syncCalendar();
     
       }
   DateValidator(new_consumption_day: Date) {
@@ -95,7 +95,7 @@ export class UpdateComponent implements OnInit {
       document.getElementById("DateInThePast")!.style.display = "block";
     } else {
     window.location.reload();
-    this.todoService.syncCalendar();
+    this.medicineService.syncCalendar();
     this.reload();
       return;
     }

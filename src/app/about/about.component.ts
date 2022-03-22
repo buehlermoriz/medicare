@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../todo.service';
+import { MedicineService } from '../medicine.service';
 
 @Component({
   selector: 'app-about',
@@ -10,10 +10,10 @@ import { TodoService } from '../todo.service';
 export class AboutComponent implements OnInit {
   breakpoint: number | undefined;
 
-  constructor(private todoService: TodoService) { }
+  constructor(private medicineService: MedicineService) { }
 
   ngOnInit(): void {
-    this.todoService.syncCalendar();
+    this.medicineService.syncCalendar();
     this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;    
   }
   

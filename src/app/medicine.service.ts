@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Dexie } from "dexie";
 import { v4 } from "uuid";
 import { Medicine } from "./medicine";
-import { EventInput, CalendarOptions } from "@fullcalendar/angular";
+import { EventInput } from "@fullcalendar/angular";
 import * as moment from "moment";
 
 export const INITIAL_EVENTS: EventInput[] = [];
@@ -11,7 +11,7 @@ export const INITIAL_EVENTS: EventInput[] = [];
 @Injectable({
   providedIn: "root",
 })
-export class TodoService extends Dexie {
+export class MedicineService extends Dexie {
   todos!: Dexie.Table<Medicine, string>;
 
   constructor(private httpClient: HttpClient) {
@@ -30,7 +30,7 @@ export class TodoService extends Dexie {
     return this.todos;
   }
 
-  getToDo(todo: Medicine) {
+  getMedicine(todo: Medicine) {
     console.log(this.todos.get(todo.id));
     return this.todos.get(todo.id);
   }
@@ -77,7 +77,7 @@ export class TodoService extends Dexie {
       .toPromise();
     this.todos.bulkPut(syncedTodos!);
   }
-  deleteToDo(todo: Medicine) {
+  deleteMedicine(todo: Medicine) {
     window.location.reload();
     return this.todos.delete(todo.id);
 

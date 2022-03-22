@@ -1,6 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../todo.service';
+import { MedicineService } from '../medicine.service';
 
 @Component({
   selector: 'app-imprint',
@@ -10,12 +10,12 @@ import { TodoService } from '../todo.service';
 export class ImprintComponent implements OnInit {
      breakpoint: number | undefined;
      height!: string | number;
-  constructor(private todoService: TodoService) { 
+  constructor(private medicineService: MedicineService) { 
    
   }
 
   ngOnInit(): void {
-    this.todoService.syncCalendar();
+    this.medicineService.syncCalendar();
     this.breakpoint = (window.innerWidth <= 1090) ? 1 : 2;    
     this.height = (window.innerWidth <= 1090) ? "400px" : "500px";
   }

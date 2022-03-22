@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Medicine } from "../medicine";
-import { TodoService } from "../todo.service";
+import { MedicineService } from "../medicine.service";
 import {
   FormGroup,
   FormControl,
@@ -24,7 +24,7 @@ export class TodosComponent implements OnInit {
     end: new FormControl(),
   });
 
-  constructor(private todoService: TodoService) {}
+  constructor(private medicineService: MedicineService) {}
 
   ngOnInit(): void {
     this.loadTodos();
@@ -202,7 +202,7 @@ export class TodosComponent implements OnInit {
     consumption_midday: boolean,
     consumption_evening: boolean
   ) {
-    var id = await this.todoService.add(
+    var id = await this.medicineService.add(
       medicine,
       description,
       consumption,
@@ -223,24 +223,24 @@ export class TodosComponent implements OnInit {
   }
 
   async sync() {
-    await this.todoService.sync();
+    await this.medicineService.sync();
     await this.loadTodos();
   }
 
   async delete(todo: Medicine) {
     console.log("delete");
-    await this.todoService.deleteToDo(todo);
+    await this.medicineService.deleteMedicine(todo);
     await this.loadTodos();
   }
   async loadTheOne(todo: Medicine) {
-    await this.todoService.getToDo(todo);
+    await this.medicineService.getMedicine(todo);
   }
 
   async loadTodos() {
-    this.todos = await this.todoService.getAll();
+    this.todos = await this.medicineService.getAll();
     this.sortByDueDate();
     // Elemente werden in den Kalender geladen
-    this.todoService.syncCalendar();
+    this.medicineService.syncCalendar();
     //Check ob, ein Platzhaltertext angezeigt wird, weil keine Medikamente eingetragen sind
     this.togglePlaceholder();
   }
@@ -284,7 +284,7 @@ export class TodosComponent implements OnInit {
   }
 
   async togglePlaceholder() {
-    var todos = this.todoService.getAll();
+    var todos = this.medicineService.getAll();
     if ((await todos).length === 0) {
       document.getElementById("placeholder")!.style.display = "block";
       if (window.innerWidth > 500) {
