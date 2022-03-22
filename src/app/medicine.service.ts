@@ -12,27 +12,27 @@ export const INITIAL_EVENTS: EventInput[] = [];
   providedIn: "root",
 })
 export class MedicineService extends Dexie {
-  todos!: Dexie.Table<Medicine, string>;
+  medicine!: Dexie.Table<Medicine, string>;
 
   constructor(private httpClient: HttpClient) {
     super("TodoDB");
 
     this.version(1).stores({
-      todos: "id",
+      medicine: "id",
     });
   }
 
   getAll() {
-    return this.todos.toArray();
+    return this.medicine.toArray();
   }
 
   getAllCalendar() {
-    return this.todos;
+    return this.medicine;
   }
 
   getMedicine(todo: Medicine) {
-    console.log(this.todos.get(todo.id));
-    return this.todos.get(todo.id);
+    console.log(this.medicine.get(todo.id));
+    return this.medicine.get(todo.id);
   }
 
   add(
@@ -50,7 +50,7 @@ export class MedicineService extends Dexie {
     consumption_midday: boolean,
     consumption_evening: boolean
   ) {
-    return this.todos.add({
+    return this.medicine.add({
       medicine: medicine,
       id: v4(),
       done: false,
@@ -75,21 +75,21 @@ export class MedicineService extends Dexie {
     const syncedTodos = await this.httpClient
       .post<Medicine[]>("http://localhost:3030/sync", allTodos)
       .toPromise();
-    this.todos.bulkPut(syncedTodos!);
+    this.medicine.bulkPut(syncedTodos!);
   }
   deleteMedicine(todo: Medicine) {
     window.location.reload();
-    return this.todos.delete(todo.id);
+    return this.medicine.delete(todo.id);
 
   }
 
   async syncCalendar() {
-    let todos = this.getAll();
+    let medicine = this.getAll();
     let i: number = INITIAL_EVENTS.length;
-    let y: number = (await todos).length;
+    let y: number = (await medicine).length;
 
     if (i !== y) {
-      for (let todo of await todos) {
+      for (let todo of await medicine) {
         var DateFormated = moment(todo.consumption).format("YYYY-MM-DD");
         INITIAL_EVENTS.push({
           id: todo.id,
@@ -110,7 +110,7 @@ export class MedicineService extends Dexie {
   ) {
     description = NewDescription;
     console.log(description + "neue beschreibuung");
-    return this.todos.update(todo, { description });
+    return this.medicine.update(todo, { description });
   }
   async PutMethodNewMedicineName(
     todo: Medicine,
@@ -119,7 +119,7 @@ export class MedicineService extends Dexie {
   ) {
     medicine = NewMedicineName;
     console.log(medicine + "neue Medizinname");
-    return this.todos.update(todo, { medicine });
+    return this.medicine.update(todo, { medicine });
   }
   async PutMethodCheckTime(
     todo: Medicine,
@@ -130,7 +130,7 @@ export class MedicineService extends Dexie {
     todo.consumption_evening = check_consumption_evening;
     todo.consumption_midday = check_consumption_midday;
     todo.consumption_morning = check_consumption_morning;
-    this.todos.put(todo);
+    this.medicine.put(todo);
   }
 
   async PutMethodNewConsumptionDate(
@@ -140,6 +140,6 @@ export class MedicineService extends Dexie {
   ) {
     consumption = new_consumption_day;
     console.log(consumption + "neuer Tag zum Einnehmen");
-    return this.todos.update(todo, { consumption });
+    return this.medicine.update(todo, { consumption });
   }
 }
