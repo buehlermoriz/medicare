@@ -1,15 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { Todo } from "../todo";
+import { Medicine } from "../medicine";
 import { TodoService } from "../todo.service";
 import {
   FormGroup,
   FormControl,
-  FormsModule,
-  ReactiveFormsModule,
 } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { MatTooltip } from "@angular/material/tooltip/tooltip";
 import * as moment from "moment";
 
 @Component({
@@ -22,7 +17,7 @@ export class TodosComponent implements OnInit {
   hidden = true;
   breakpoint: number | undefined;
   height!: string | number;
-  todos: Todo[] = [];
+  todos: Medicine[] = [];
   selected = "1";
   range = new FormGroup({
     start: new FormControl(),
@@ -232,12 +227,12 @@ export class TodosComponent implements OnInit {
     await this.loadTodos();
   }
 
-  async delete(todo: Todo) {
+  async delete(todo: Medicine) {
     console.log("delete");
     await this.todoService.deleteToDo(todo);
     await this.loadTodos();
   }
-  async loadTheOne(todo: Todo) {
+  async loadTheOne(todo: Medicine) {
     await this.todoService.getToDo(todo);
   }
 
@@ -251,7 +246,7 @@ export class TodosComponent implements OnInit {
   }
 
   async sortByDueDate() {
-    this.todos.sort((a: Todo, b: Todo) => {
+    this.todos.sort((a: Medicine, b: Medicine) => {
       return a.consumption!.getTime() - b.consumption!.getTime();
     });
   }
@@ -270,7 +265,7 @@ export class TodosComponent implements OnInit {
     document.getElementById("AddButton")?.classList.add("visible");
     document.getElementById("add")?.classList.add("notVisible");
   }
-  checkOverdue(todo: Todo) {
+  checkOverdue(todo: Medicine) {
     var today = new Date();
 
     if (todo.consumption < today) {

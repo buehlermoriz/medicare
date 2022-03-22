@@ -7,8 +7,6 @@ h1{
 #wrapper{
     padding: 5%;
 }
-
-
 svg text {
     font-family: Arial;
     letter-spacing: 10px;
@@ -84,7 +82,6 @@ svg text {
 	 0% {
 		 background-position: 50px 50px;
 	}
-    
 }
 h2{
     text-align: center;

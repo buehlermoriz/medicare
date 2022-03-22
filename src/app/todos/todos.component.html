@@ -12,15 +12,15 @@
 <div class="wrapper">
 
 <div class="addButton">
-    <button mat-fab
-    (click)="addVisibilty()" 
-    color="accent" 
-    aria-label="button neue Medizin hinzufügen"
-    matTooltip="Hier klicken um eine neue Medizin hinzuzufügen"
-    >
-    
-    <mat-icon>add</mat-icon>
-    </button>
+  <button mat-fab
+  (click)="addVisibilty()" 
+  color="accent" 
+  aria-label="button neue Medizin hinzufügen"
+  matTooltip="Hier klicken um eine neue Medizin hinzuzufügen"
+  >
+  
+  <mat-icon>add</mat-icon>
+  </button>
 </div>
 <div class="mat-typography" id="add">
     <div id="newMedicine">
@@ -97,47 +97,47 @@
        {{resetBadge()}}
         {{checkOverdue(todo)}}
         
-        <mat-card class="card stretch-badge" matBadge="Medikament jetzt einnehmen!" [matBadgeHidden]="hidden"  >
-          <div class="overflowHidden">
-            <mat-card-content>
-            <mat-card-title id="med-title">Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
-            <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
-        <div id={{todo.id}} class="test">
-            <table>
-            <tr>
-                <td>
-                    Einnehmen am:
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    {{ formatDate(todo.consumption) }}
-                </td>
-            </tr>
-            <tr>
-                <td *ngIf="todo.consumption_morning== true || todo.consumption_midday== true || todo.consumption_evening== true">
-                    Zur Tageszeit ... einnahmen:
-                </td>
-              </tr>
-              <tr>
-                <td   *ngIf="todo.consumption_morning== true">
-                    Morgens
-                </td>
-                <td   *ngIf="todo.consumption_midday== true">
-                    Mittags
-                </td>
-                <td   *ngIf="todo.consumption_evening== true">
-                    Abends
-                </td>
-            </tr>
-            <div class="mat-typography"></div>
-            <button class="mat-body-1"  mat-raised-button color="accent" (click)="delete(todo)">Eingenommen</button>
-            <button class="mat-body-1" mat-raised-button color="warn"><a id="med-adjust" mat-list-item [routerLink]="['update', todo.id]">Anpassen</a></button>
-             </table>
-            </div>
-            </mat-card-content>
-          </div>
-        </mat-card>
-           </li>
+  <mat-card class="card stretch-badge" matBadge="Medikament jetzt einnehmen!" [matBadgeHidden]="hidden"  >
+    <div class="overflowHidden">
+      <mat-card-content>
+      <mat-card-title id="med-title">Medikament: <strong>{{ todo.medicine }}</strong></mat-card-title>
+      <mat-card-subtitle>Beschreibung: {{ todo.description }}</mat-card-subtitle>
+  <div id={{todo.id}} class="test">
+      <table>
+      <tr>
+          <td>
+              Einnehmen am:
+          </td>
+        </tr>
+        <tr>
+          <td>
+              {{ formatDate(todo.consumption) }}
+          </td>
+      </tr>
+      <tr>
+          <td *ngIf="todo.consumption_morning== true || todo.consumption_midday== true || todo.consumption_evening== true">
+              Zur Tageszeit ... einnahmen:
+          </td>
+        </tr>
+        <tr>
+          <td   *ngIf="todo.consumption_morning== true">
+              Morgens
+          </td>
+          <td   *ngIf="todo.consumption_midday== true">
+              Mittags
+          </td>
+          <td   *ngIf="todo.consumption_evening== true">
+              Abends
+          </td>
+      </tr>
+      <div class="mat-typography"></div>
+      <button class="mat-body-1"  mat-raised-button color="accent" (click)="delete(todo)">Eingenommen</button>
+      <button class="mat-body-1" mat-raised-button color="warn"><a id="med-adjust" mat-list-item [routerLink]="['update', todo.id]">Anpassen</a></button>
+        </table>
+      </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+      </li>
 </ul>
 </div>

@@ -30,7 +30,7 @@ import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCard, MatCardActions, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -63,8 +63,6 @@ FullCalendarModule.registerPlugins([
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
     LayoutModule,

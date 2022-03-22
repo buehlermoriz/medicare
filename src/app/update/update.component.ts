@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Todo } from "../todo";
+import { Medicine } from "../medicine";
 import { TodoService } from "../todo.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { TodoService } from "../todo.service";
   styleUrls: ["./update.component.css"],
 })
 export class UpdateComponent implements OnInit {
-  todo?: Todo;
+  todo?: Medicine;
 
   constructor(
     private todoService: TodoService,
@@ -28,14 +28,14 @@ export class UpdateComponent implements OnInit {
     );
   }
 
-  async PutMethodNewDescription(todo: Todo, NewDescription: string) {
+  async PutMethodNewDescription(todo: Medicine, NewDescription: string) {
     await this.todoService.PutMethodDescription(
       todo,
       NewDescription,
       todo.description
     );
   }
-  async PutMethodNewMedicineName(todo: Todo, NewMedicineName: string) {
+  async PutMethodNewMedicineName(todo: Medicine, NewMedicineName: string) {
     await this.todoService.PutMethodNewMedicineName(
       todo,
       NewMedicineName,
@@ -44,7 +44,7 @@ export class UpdateComponent implements OnInit {
   }
 
   async PutMethodCheckTime(
-    todo: Todo,
+    todo: Medicine,
     check_consumption_evening: boolean,
     check_consumption_midday: boolean,
     check_consumption_morning: boolean
@@ -57,7 +57,7 @@ export class UpdateComponent implements OnInit {
     );
   }
 
-  async PutMethodNewConsumptionDate(todo: Todo, new_consumption_day: Date) {
+  async PutMethodNewConsumptionDate(todo: Medicine, new_consumption_day: Date) {
     await this.DateValidator(new_consumption_day);
     await this.todoService.PutMethodNewConsumptionDate(
       todo,
@@ -67,7 +67,7 @@ export class UpdateComponent implements OnInit {
   }
 
   async PutMethod(
-    todo: Todo,
+    todo: Medicine,
     NewDescription: string,
     NewMedicineName: string,
     check_consumption_evening: boolean,

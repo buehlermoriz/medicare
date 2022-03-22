@@ -1,4 +1,4 @@
-export interface Todo {
+export interface Medicine {
   id: string;
   medicine: string;
   description: string;
