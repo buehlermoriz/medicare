@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Dexie } from "dexie";
 import { v4 } from "uuid";
-import { Todo } from "./todo";
+import { Medicine } from "./medicine";
 import { EventInput, CalendarOptions } from "@fullcalendar/angular";
 import * as moment from "moment";
 
@@ -12,7 +12,7 @@ export const INITIAL_EVENTS: EventInput[] = [];
   providedIn: "root",
 })
 export class TodoService extends Dexie {
-  todos!: Dexie.Table<Todo, string>;
+  todos!: Dexie.Table<Medicine, string>;
 
   constructor(private httpClient: HttpClient) {
     super("TodoDB");
@@ -30,7 +30,7 @@ export class TodoService extends Dexie {
     return this.todos;
   }
 
-  getToDo(todo: Todo) {
+  getToDo(todo: Medicine) {
     console.log(this.todos.get(todo.id));
     return this.todos.get(todo.id);
   }
@@ -73,12 +73,11 @@ export class TodoService extends Dexie {
   async sync() {
     const allTodos = await this.getAll();
     const syncedTodos = await this.httpClient
-      .post<Todo[]>("http://localhost:3030/sync", allTodos)
+      .post<Medicine[]>("http://localhost:3030/sync", allTodos)
       .toPromise();
     this.todos.bulkPut(syncedTodos!);
   }
-  deleteToDo(todo: Todo) {
-    // this.todos.put(todo);
+  deleteToDo(todo: Medicine) {
     window.location.reload();
     return this.todos.delete(todo.id);
 
@@ -105,7 +104,7 @@ export class TodoService extends Dexie {
   }
 
   async PutMethodDescription(
-    todo: Todo,
+    todo: Medicine,
     NewDescription: string,
     description: string
   ) {
@@ -114,7 +113,7 @@ export class TodoService extends Dexie {
     return this.todos.update(todo, { description });
   }
   async PutMethodNewMedicineName(
-    todo: Todo,
+    todo: Medicine,
     NewMedicineName: string,
     medicine: string
   ) {
@@ -123,7 +122,7 @@ export class TodoService extends Dexie {
     return this.todos.update(todo, { medicine });
   }
   async PutMethodCheckTime(
-    todo: Todo,
+    todo: Medicine,
     check_consumption_evening: boolean,
     check_consumption_midday: boolean,
     check_consumption_morning: boolean
@@ -135,7 +134,7 @@ export class TodoService extends Dexie {
   }
 
   async PutMethodNewConsumptionDate(
-    todo: Todo,
+    todo: Medicine,
     new_consumption_day: Date,
     consumption: Date | null
   ) {
